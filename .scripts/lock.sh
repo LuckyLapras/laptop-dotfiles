@@ -20,7 +20,7 @@ xidlehook \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
   `# Undim & lock after 10 more seconds` \
   --timer 10 \
-    'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock -i /home/lily/Pictures/Wallpapers/yliaed.png' \
+    'i3lock -i /home/lily/Pictures/Wallpapers/yliaed.png; sleep 1; xrandr --output "$PRIMARY_DISPLAY" --brightness 0.4' \
     '' \
   `# Finally, suspend an hour after it locks` \
   --timer 300 \
