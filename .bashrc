@@ -17,10 +17,12 @@ if  [ -x /usr/bin/starship ]; then
     unset -f __main
 fi
 
+[[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
+[[ ${BLE_VERSION-} ]] && ble-attach
+
 # Advanced command-not-found hook
 # source /usr/share/doc/find-the-command/ftc.bash
 #source /usr/share/doc/pkgfile/command-not-found.bash
-source /usr/share/blesh/ble.sh
 
 # Aliases
 alias dir='dir --color=auto'
@@ -54,4 +56,7 @@ alias jctl="journalctl -p 3 -xb"
 
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+
 alias config='/usr/bin/git --git-dir=/home/lily/.cfg/ --work-tree=/home/lily'
+
+alias wine32='WINEPREFIX=~/.wine32 wine'
