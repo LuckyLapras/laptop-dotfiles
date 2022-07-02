@@ -15,6 +15,16 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
+xset s off
+xset -dpms
+
 xrdb -merge ~/.Xresources
 setxkbmap gb
-exec i3
+
+. /etc/os-release
+
+if [ "$NAME" = "Arch Linux" ]; then
+    exec bspwm
+else
+    exec i3
+fi
