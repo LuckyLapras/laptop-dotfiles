@@ -1,0 +1,6 @@
+#!/bin/dash
+
+while read xtit
+do
+    echo $xtit
+done < <(./xtitle -s)
