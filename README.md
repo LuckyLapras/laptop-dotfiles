@@ -33,7 +33,7 @@ this is the distro i spend most of my time on my laptop in. it's a rather bad la
 - the rofi dmenu has rounded corners on all sides, which looks a lil bad. im considering switching to pure dmenu or just simply not using the themes but im not sure if that'll be worth it.
 - my terminal colour scheme sucks. i like the idea i had but i feel i've executed it very poorly and i can't find any good resources on what makes a good colour scheme other than a few reddit threads asking people which colour scheme they use (hint: it's either gruvbox, dracula or catpuccin)
 - the lock script may or may not work i haven't fully tested it yet. if it does what i think it should it should lock only when on battery power (if your battery is BAT0, no idea what it does otherwise) but there's a decent chance it doesn't.
-- occasionally the battery output will show duplicate itself. im not entirely sure why this happens.
+- occasionally the battery output will show duplicate itself. im not entirely sure why this happens. the battery script also causes a huge cpu spike (although that might just be bc my cpu's bad). im looking into some way to replace my current scripts with ones that use `inotifywait` to see if that has any effect.
 
 ## kinnie rice
 
