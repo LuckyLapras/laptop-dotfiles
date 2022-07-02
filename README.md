@@ -30,6 +30,7 @@ this is the distro i spend most of my time on my laptop in. it's a rather bad la
 - on that note, bspwmrc's exec-ing capabilities are confusing at best. i think i've got everything started properly through the systemd target (as dex dev suggested (remind me later to add a link to that)) but i'd still like to find a more elegant solution
 - the rofi dmenu has rounded corners on all sides, which looks a lil bad. im considering switching to pure dmenu or just simply not using the themes but im not sure if that'll be worth it.
 - my terminal colour scheme sucks. i like the idea i had but i feel i've executed it very poorly and i can't find any good resources on what makes a good colour scheme other than a few reddit threads asking people which colour scheme they use (hint: it's either gruvbox, dracula or catpuccin)
+- the lock script may or may not work i haven't fully tested it yet. if it does what i think it should it should lock only when on battery power (if your battery is BAT0, no idea what it does otherwise) but there's a decent chance it doesn't
 
 ## kinnie rice
 
@@ -51,4 +52,4 @@ this installation is designed for me to simply open up mixxx and do a funky lil 
   - `xtitle` doesn't always work nicely. i've tried a workaround (see .scripts/i3blocks/title.sh) but that doesn't work. i've got a lil work around in the .i3blocks.conf but that doesn't always hold up either
   - the black line at the top of the bar is kinda annoying. cannot find any way to get rid of it.
 - if dunst actually starts it insists on taking up the full width of the screen. the config is no different from the regular rice (they share a home directory (probably a very bad idea)).
-
+- powermenu doesn't seem to work. i'll figure that out at a later point i can just run systemctl commands manually for now.
