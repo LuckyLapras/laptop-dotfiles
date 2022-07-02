@@ -2,6 +2,7 @@
 
 
 i should note before saying anything else that these files probably suck please do not hesitate to grill me in the issues (i hope people can actually open issues idk if i've used git correctly)
+
 this repo houses two different rices. i dual-boot arch and ubuntu (studio) on this laptop bc ~~im an idiot~~ doing regular tasks is painfull slow without threading and mixxx demands i don't use threading. these rices will be referred to as "regular" and "kinnie" respectively. a lot of config is shared but i'll list them out as if they weren't.
 
 ## regular rice
