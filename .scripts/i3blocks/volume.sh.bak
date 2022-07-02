@@ -1,0 +1,30 @@
+#!/bin/bash
+
+volume() {
+vol=$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
+
+label=''
+suf='%'
+
+if [[ $vol -le 20 ]]
+then
+	sym="奄"
+elif [[ $vol -le 60 ]]
+then
+	sym="奔"
+else
+	sym="墳"
+fi
+
+if [ $(pacmd list-sinks|grep -A 15 '* index'|awk '/muted:/{ print $2 }') == "yes" ] || [[ $vol == 0 ]]
+then
+	sym="ﱝ "
+	vol='0'
+	suf=''
+	bg='#222222'
+fi
+
+echo -e $sym$vol
+}
+
+volume

@@ -42,7 +42,7 @@ while getopts ":qaw" option; do
            exit;;
         a) #maim -s -u $DIR/$FILENAME
            selection
-           if [ $? -eq 0 ]; then
+           if [ $? -eq 1 ]; then
                xclip -sel clip < /dev/null
                xclip -selection clip -t image/png $DIR/$FILENAME
                notify
