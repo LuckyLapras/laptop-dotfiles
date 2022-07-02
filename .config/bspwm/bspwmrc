@@ -1,0 +1,35 @@
+#! /bin/bash
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x succade > /dev/null || succade &
+pgrep bspswallow || bspswallow &
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+bspc config border_width         0
+bspc config window_gap          12
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a MEGAsync state=floating rectangle=402x564-0+24
+bspc rule -a feh state=floating
+bspc rule -a Zathura state=tiled
+
+picom &
+dunst &
+feh --bg-scale /home/lily/Pictures/Wallpapers/rinabg.jpg
+xsetroot -cursor_name left_ptr
+xset s off
+xset dpms
+systemctl --user start autostart.target
+fcitx5 &
+mconnect &
+megasync
+sleep 20; pkill -RTMIN+7 volume.sh

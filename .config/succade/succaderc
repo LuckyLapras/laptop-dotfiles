@@ -1,0 +1,68 @@
+[bar]
+name = "testbar"
+blocks = "desktop cpu ram updates | cum title | brightness volume wifi datetime battery"
+width=1816
+height = 24
+areas = 16
+foreground = "#cccccc"
+background = "#292929"
+line-color = "#f7a8b8"
+line-width = 2
+font="Cozette:size=5"
+label-font = "Siji-ng:size=10"
+#label-font = "icomoon-feather"
+
+[default]
+label-foreground = "#ec3257"
+affix-foreground = "#555555"
+margin = 8
+padding = 0
+underline = true
+live = true
+
+[desktop]
+command = /home/lily/.scripts/blocks/workspaces.sh
+trigger = bspc subscribe
+raw = true
+
+[datetime]
+command = "date +'%Y-%m-%d %H:%M:%S'"
+interval = 1
+
+[cpu]
+command = /home/lily/.scripts/blocks/cpu-proc -m -u
+label = " "
+mouse-left = "st htop"
+
+[ram]
+command = /home/lily/.scripts/blocks/mem-proc -m -u
+label = " "
+mouse-left = "st htop"
+
+[title]
+margin-left = 110
+command = /home/lily/.scripts/blocks/xtitle -s -t 30
+
+[wifi]
+command = /home/lily/.scripts/blocks/wifi.sh
+raw = true
+mouse-left = networkmanager_dmenu
+
+[volume]
+command = /home/lily/.scripts/blocks/volume.sh
+raw = true
+mouse-left = pavucontrol
+
+[battery]
+command = /home/lily/.scripts/blocks/battery.sh
+raw = true
+mouse-left = /home/lily/.config/rofi/applets/android/powermenu.sh
+
+[brightness]
+command = /home/lily/.scripts/blocks/brightness.sh
+raw = true
+
+[updates]
+command = /home/lily/.scripts/blocks/updates.sh
+label = " "
+mouse-left = "st sudo pacman -Syu"
