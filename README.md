@@ -24,7 +24,7 @@ this repo houses two different rices. i dual-boot arch and ubuntu (studio) on th
 - rofi themes: text launcher and android powermenu from [adi1090x](https://github.com/adi1090x/rofi)
 - font: [cozette](https://github.com/slavfox/Cozette)
 
-this is the distro i spend most of my time on my laptop in. it's a rather bad laptop so i've mad it as minimal as i possibly can with my current knowledge. please feel free to ask me about whatever's going on in here and also suggest ways in which i can do better.
+this is the distro i spend most of my time on my laptop in. it's a rather bad laptop so i've made it as minimal as i possibly can with my current knowledge. please feel free to ask me about whatever's going on in here and also suggest ways in which i can do better.
 
 ### known issues
 
