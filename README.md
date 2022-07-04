@@ -24,7 +24,7 @@ this repo houses two different rices. i dual-boot arch and ubuntu (studio) on th
 - rofi themes: text launcher and android powermenu from [adi1090x](https://github.com/adi1090x/rofi)
 - font: [cozette](https://github.com/slavfox/Cozette)
 
-this is the distro i spend most of my time on my laptop in. it's a rather bad laptop so i've made it as minimal as i possibly can with my current knowledge. please feel free to ask me about whatever's going on in here and also suggest ways in which i can do better.
+this is the distro i spend most of my time on my laptop in. it's a rather bad laptop so i've mad  it as minimal as i possibly can with my current knowledge. please feel free to ask me about whatever's going on in here and also suggest ways in which i can do better.
 
 ### known issues
 
@@ -32,7 +32,7 @@ this is the distro i spend most of my time on my laptop in. it's a rather bad la
 - on that note, bspwmrc's exec-ing capabilities are confusing at best. i think i've got most things started through bspwmrc and others through the systemd target ([as dex dev suggested](https://github.com/jceb/dex#autostart-alternative)) but i'd still like to find a more elegant solution
 - the rofi dmenu has rounded corners on all sides, which looks a lil bad. im considering switching to pure dmenu or just simply not using the themes but im not sure if that'll be worth it.
 - my terminal colour scheme sucks. i like the idea i had but i feel i've executed it very poorly and i can't find any good resources on what makes a good colour scheme other than a few reddit threads asking people which colour scheme they use.
-- occasionally the battery output will show duplicate itself. im not entirely sure why this happens. the battery script also causes a huge cpu spike (although that might just be bc my cpu's bad). im looking into some way to replace my current scripts with ones that use `inotifywait` to see if that has any effect.
+- occasionally the battery output will show duplicate itself. im not entirely sure why this happens. (update: pretty sure this is bc i push a signal to the script when i connect the laptop to power at the same time of the while loop reaching the end of the sleep command. need to find a better way of refreshing when this happens.) the battery script also causes a huge cpu spike (although that might just be bc my cpu's bad). im looking into some way to replace my current scripts with ones that use `inotifywait` to see if that has any effect.
 
 ## kinnie rice
 
