@@ -14,7 +14,7 @@ this repo houses two different rices. i dual-boot arch and ubuntu (studio) on th
 - terminal: [luke smith's build of st](https://github.com/LukeSmithxyz/st) (i would try patching and building it myself but it never works out for me)
 - shell: [zsh](https://www.zsh.org)
   - zsh plugins: [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-  - prompt: [starship](https://starship.rs)
+  - prompt: [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - bar: [succade](https://github.com/domsson/succade) (i really should learn how to use regular lemonbar at some point)
   - bar uses scripts from .scripts/blocks directory. i believe said scripts should be using dash instead of zsh.
 - notifs: [dunst](https://github.com/dunst-project/dunst)
