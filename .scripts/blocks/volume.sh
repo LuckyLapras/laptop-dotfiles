@@ -52,8 +52,10 @@ output=$(pactl get-default-sink)
 case $hphone in
     analog-output-headphones) sym=""
         ;;
-    bluez-output*)            sym=""
-        uline="%%{U#86dcfc}"
+    *) case $output in
+        bluez_output*)        sym=""
+            uline="%%{U#86dcfc}"
+       esac
 esac
 
 label='%%{+u}'$uline'%%{F#ec3257}'$sym'%%{F-}'

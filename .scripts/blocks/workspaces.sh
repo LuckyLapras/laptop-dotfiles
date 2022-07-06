@@ -1,4 +1,4 @@
-#!/bin/dash
+#!/bin/bash
 
 ### Query bpswm for desktop ids
 # Query bspwm for all desktops
