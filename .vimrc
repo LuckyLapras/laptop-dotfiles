@@ -56,7 +56,7 @@ endif
 :set t_Co=16
 let g:airline_powerline_fonts = 1
 let g:airline_solarized_bg='dark'
-let g:airline_theme='term'
+let g:airline_theme='base16_vim'
 :set tabstop=4
 :set shiftwidth=4
 :set expandtab

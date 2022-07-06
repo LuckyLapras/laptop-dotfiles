@@ -1,41 +1,42 @@
 *.selectToClipboard: true
 
 ! special
-*.foreground:   #ffffff
-*.background:   #292929
-*.cursorColor:  #ffffff
+*.foreground:   #878ba6
+*.background:   #1e202f
+*.cursorColor:  #878ba6
 *.alpha:        0.9
+*.alphaOffset:  0.3
 
 ! black
-*.color0:       #f7a8b8
-*.color8:       #f16a85
+*.color0:       #1e202f
+*.color8:       #4f5472
 
 ! red
-*.color1:       #f6a2b3
-*.color9:       #ef5775
+*.color1:       #7586f5
+*.color9:       #fe81b5
 
 ! green
-*.color2:       #f58fa3
-*.color10:      #ee4466
+*.color2:       #fb6fa9
+*.color10:      #292c3d
 
 ! yellow
-*.color3:       #f37c94
-*.color11:      #ec3257
+*.color3:       #ffb3d2
+*.color11:      #444864
 
 ! blue
-*.color4:       #86dcfd
-*.color12:      #36c4fc
+*.color4:       #8696fd
+*.color12:      #5b6080
 
 ! magenta
-*.color5:       #72d6fd
-*.color13:      #22befc
+*.color5:       #fb6fa9
+*.color13:      #d2d8fe
 
 ! cyan
-*.color6:       #55cdfc
-*.color14:      #0eb8fb
+*.color6:       #a0acfe
+*.color14:      #f764a1
 
 ! white
-*.color7:       #4acafc
-*.color15:      #04aef1
-
+*.color7:       #878ba6
+*.color15:      #ebedff
+ 
 *font:          Cozette:style=Medium:size=8
