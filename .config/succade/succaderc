@@ -41,7 +41,7 @@ mouse-left = "st htop"
 
 [title]
 margin-left = 110
-command = /home/lily/.scripts/blocks/xtitle -s -t 30
+command = /home/lily/.scripts/blocks/xtitle -s
 
 [wifi]
 command = /home/lily/.scripts/blocks/wifi.sh

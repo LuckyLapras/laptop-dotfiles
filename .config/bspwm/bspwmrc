@@ -27,9 +27,9 @@ dunst &
 feh --bg-scale /home/lily/Pictures/Wallpapers/rinabg.jpg
 xsetroot -cursor_name left_ptr
 xset s off
-xset dpms
+xset -dpms
 systemctl --user start autostart.target
 fcitx5 &
 mconnect &
-megasync
+megasync &
 sleep 20; pkill -RTMIN+7 volume.sh

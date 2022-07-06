@@ -71,6 +71,10 @@ alias ld='ls -dlh .* --color=auto'
 
 eval "$(starship init zsh)"
 
+precmd () {printf '\033];%s\a' "$PWD - st"}
+
+setopt CORRECT
+
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 
 source /home/lily/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

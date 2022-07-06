@@ -2,7 +2,7 @@
 
 i should note before saying anything else that these files probably suck please do not hesitate to grill me in the issues (i hope people can actually open issues idk if i've used git correctly)
 
-this repo houses two different rices. i dual-boot arch and ubuntu (studio) on this laptop bc ~~im an idiot~~ doing regular tasks is painfull slow without threading and mixxx demands i don't use threading. these rices will be referred to as "regular" and "kinnie" respectively. a lot of config is shared but i'll list them out as if they weren't.
+this repo houses two different rices. i dual-boot arch and ubuntu (studio) on this laptop bc ~~im an idiot~~ doing regular tasks is painfully slow without threading and mixxx demands i don't use threading. these rices will be referred to as "regular" and "kinnie" respectively.
 
 ## regular rice
 
@@ -14,7 +14,7 @@ this repo houses two different rices. i dual-boot arch and ubuntu (studio) on th
 - terminal: [luke smith's build of st](https://github.com/LukeSmithxyz/st) (i would try patching and building it myself but it never works out for me)
 - shell: [zsh](https://www.zsh.org)
   - zsh plugins: [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-  - prompt: [starship](https://starship.rs) (this may not last im trying to get st to change its title and i think starship is making that more difficult than it needs to be)
+  - prompt: [starship](https://starship.rs)
 - bar: [succade](https://github.com/domsson/succade) (i really should learn how to use regular lemonbar at some point)
   - bar uses scripts from .scripts/blocks directory. i believe said scripts should be using dash instead of zsh.
 - notifs: [dunst](https://github.com/dunst-project/dunst)
@@ -32,7 +32,7 @@ this is the distro i spend most of my time on my laptop in. it's a rather bad la
 - on that note, bspwmrc's exec-ing capabilities are confusing at best. i think i've got most things started through bspwmrc and others through the systemd target ([as dex dev suggested](https://github.com/jceb/dex#autostart-alternative)) but i'd still like to find a more elegant solution
 - the rofi dmenu has rounded corners on all sides, which looks a lil bad. im considering switching to pure dmenu or just simply not using the themes but im not sure if that'll be worth it.
 - my terminal colour scheme sucks. i like the idea i had but i feel i've executed it very poorly and i can't find any good resources on what makes a good colour scheme other than a few reddit threads asking people which colour scheme they use.
-- occasionally the battery output will duplicate itself. im not entirely sure why this happens. (update: pretty sure this is bc i push a signal to the script when i connect the laptop to power at the same time of the while loop reaching the end of the sleep command. need to find a better way of refreshing when this happens.) the battery script also causes a huge cpu spike (although that might just be bc my cpu's bad). im looking into some way to replace my current scripts with ones that use `inotifywait` to see if that has any effect.
+- the battery script causes a huge cpu spike when (dis)connecting the charger (although that might just be bc my cpu's bad). im looking into some way to replace my current scripts with ones that use `inotifywait` to see if that has any effect.
 
 ## kinnie rice
 
