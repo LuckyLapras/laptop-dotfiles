@@ -12,6 +12,7 @@ this repo houses two different rices. i dual-boot arch and ubuntu (studio) on th
 - wm: [bspwm](https://github.com/baskerville/bspwm)
 - compositor: [picom](https://github.com/yshui/picom)
 - terminal: [luke smith's build of st](https://github.com/LukeSmithxyz/st) (i would try patching and building it myself but it never works out for me)
+  - colour scheme: a slightly modified version of [Base2Tone-iterm2-SuburbDark](https://github.com/atelierbram/Base2Tone-iterm2) (the screenshots are now out of date i'll update them when i think about it)
 - shell: [zsh](https://www.zsh.org)
   - zsh plugins: [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
   - prompt: [powerlevel10k](https://github.com/romkatv/powerlevel10k)
