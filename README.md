@@ -6,7 +6,7 @@ this repo houses two different rices. i dual-boot arch and ubuntu (studio) on th
 
 ## regular rice
 
-![screenshot](/Pictures/Screenshots/2022-05/Screenshot-20220525-152701.png)
+![screenshot](/Pictures/Screenshots/2022-05/Screenshot-20220708-172153.png)
 
 - distro: [arch](https://archlinux.org)
 - wm: [bspwm](https://github.com/baskerville/bspwm)
