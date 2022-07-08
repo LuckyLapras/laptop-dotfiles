@@ -11,7 +11,7 @@
 *.color8:       #43487f
 
 ! red
-*.color1:       #82a2f9
+*.color1:       #454f80
 *.color9:       #fe9dc6
 
 ! green
@@ -37,5 +37,5 @@
 ! white
 *.color7:       #809dad
 *.color15:      #f8dfff
- 
+
 *font:          Cozette:style=Medium:size=8

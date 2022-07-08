@@ -76,9 +76,7 @@ alias ls='ls -h --color=auto'
 alias ll='ls -alh --color=auto'
 alias ld='ls -dlh .* --color=auto'
 
-eval "$(starship init zsh)"
-
-precmd () {printf '\033];%s\a' "$PWD - st"}
+precmd () {printf '\033];%s\a' "${PWD/$HOME/~} - st"}
 
 setopt CORRECT
 

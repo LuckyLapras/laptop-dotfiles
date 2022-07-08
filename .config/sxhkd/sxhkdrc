@@ -16,7 +16,7 @@ super + Escape
 
 #edit bspwmrc
 super + shift + c
-    st vim ~/.config/bspwm/bspwmrc
+    st vim -O  ~/.config/bspwm/bspwmrc ~/.config/sxhkd/sxhkdrc
 
 #
 # bspwm hotkeys

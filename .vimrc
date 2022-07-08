@@ -56,7 +56,14 @@ endif
 :set t_Co=16
 let g:airline_powerline_fonts = 1
 let g:airline_solarized_bg='dark'
-let g:airline_theme='base16_vim'
+let g:airline_theme='base16_lily'
 :set tabstop=4
 :set shiftwidth=4
 :set expandtab
+:set title
+set equalalways
+
+" this is a funky lil workaround for the super+shift+c shortcut in sxhkd
+autocmd VimEnter * call timer_start(300, { tid -> execute('wincmd =')})
+autocmd VimResized * wincmd =
+

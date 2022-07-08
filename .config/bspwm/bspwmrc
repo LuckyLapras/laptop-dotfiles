@@ -32,4 +32,4 @@ systemctl --user start autostart.target
 fcitx5 &
 mconnect &
 megasync &
-sleep 20; pkill -RTMIN+7 volume.sh
+sleep 15; pkill -RTMIN+7 volume.sh
