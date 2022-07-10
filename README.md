@@ -33,7 +33,6 @@ this is the distro i spend most of my time on my laptop in. it's a rather bad la
 - the volume section of the bar doesn't update properly on startup. i suspect this is a pipewire problem but i have no idea how to work around it. i've tried executing a pkill to the script in my bspwmrc but that doesn't seem to work either.
 - on that note, bspwmrc's exec-ing capabilities are confusing at best. i think i've got most things started through bspwmrc and others through the systemd target ([as dex dev suggested](https://github.com/jceb/dex#autostart-alternative)) but i'd still like to find a more elegant solution.
 - the rofi dmenu has rounded corners on all sides, which looks a lil bad. im considering switching to pure dmenu or just simply not using the themes but im not sure if that'll be worth it.
-- my terminal colour scheme sucks. i like the idea i had but i feel i've executed it very poorly and i can't find any good resources on what makes a good colour scheme other than a few reddit threads asking people which colour scheme they use.
 - the battery script causes a huge cpu spike when (dis)connecting the charger (although that might just be bc my cpu's bad). im looking into some way to replace my current scripts with ones that use `inotifywait` to see if that has any effect.
 
 ## kinnie rice
