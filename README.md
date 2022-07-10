@@ -21,7 +21,7 @@ this repo houses two different rices. i dual-boot arch and ubuntu (studio) on th
 - notifs: [dunst](https://github.com/dunst-project/dunst)
 - editor: [vim](https://www.vim.org/) (im very new to vim feel free to convince me to use anything else)
   - vim plugins: [vim-airline](https://github.com/vim-airline/vim-airline)
-    - airline theme: a small modification of [base16_vim](https://github.com/vim-airline/vim-airline/blob/master/autoload/airline/themes/dark.vim), edited such that replace mode doesn't suck
+    - airline theme: a small modification of [base16\_vim](https://github.com/vim-airline/vim-airline/blob/master/autoload/airline/themes/dark.vim), edited such that replace mode doesn't suck
 - wallpaper: made by my good friend [emile toaster\_chan\_](https://twitter.com/toaster_chan_) (commission emile)
 - rofi themes: text launcher and android powermenu from [adi1090x](https://github.com/adi1090x/rofi)
 - font: [cozette](https://github.com/slavfox/Cozette)
