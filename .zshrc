@@ -76,7 +76,7 @@ alias ls='ls -h --color=auto'
 alias ll='ls -alh --color=auto'
 alias ld='ls -dlh .* --color=auto'
 
-precmd () {printf '\033];%s\a' "${PWD/$HOME/~} - $(perl -lpe 's/\0/ /g' /proc/$(xdotool getwindowpid $(xdotool getactivewindow))/cmdline)"}
+precmd () {printf '\033];%s\a' "${PWD/$HOME/~} - $(pstree -sA $$ | awk -F "---" '{ print $2 }')"}
 
 setopt CORRECT
 

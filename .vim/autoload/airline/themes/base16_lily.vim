@@ -95,7 +95,7 @@ function! airline#themes#base16_lily#refresh()
 
   " Normal mode
   let s:N1 = [s:gui00, s:gui0B, s:base00, s:base0B]
-  let s:N2 = [s:gui04, s:gui02, s:base04, s:base06]
+  let s:N2 = [s:gui04, s:gui02, s:base06, s:base04]
   let s:N3 = [s:gui0B, s:gui01, s:base0B, s:base01]
 
   if s:improved_contrast
