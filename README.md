@@ -38,14 +38,14 @@ this is the distro i spend most of my time on my laptop in. it's a rather bad la
 
 ## kinnie rice
 
-![screenshot](/Pictures/Screenshots/2022-07/Screenshot-20220702-143851.png)
+![screenshot](/Pictures/Screenshots/2022-07/Screenshot-20220710-151732.png)
 
 (anything not listed is the same as the regular rice, which is a lot apparently)
 
 - distro: [ubuntu studio](https://ubuntustudio.org) installed on top of a minimal [ubuntu 22.04](https://ubuntu.com)
 - wm: [i3](https://github.com/Airblader/i3)
 - bar: [i3blocks](https://github.com/vivien/i3blocks)
-  - bar uses scripts from .scripts/i3blocks. this is far less polished than the regular succade.
+  - bar uses scripts from .scripts/i3blocks
 
 this installation is designed for me to simply open up mixxx and do a funky lil dj set. i do not trust it with anything else. still had to make it look pretty tho :)
 
@@ -55,5 +55,5 @@ this installation is designed for me to simply open up mixxx and do a funky lil 
   - the arrows are created by using a separator blocklet which contains a single character from the font im using but bc it's a bitmap font it looks kinda terrible being manipulated the way it is
   - [xtitle](https://github.com/baskerville/xtitle) doesn't always work nicely. i've tried a workaround (see .scripts/i3blocks/title.sh) but that doesn't work. i've got a lil work around in the .i3blocks.conf but that doesn't always hold up either
   - the black line at the top of the bar is kinda annoying. cannot find any way to get rid of it.
-- if dunst actually starts it insists on taking up the full width of the screen. the config is no different from the regular rice (they share a home directory (probably a very bad idea)).
+- dunst insists on taking up the full width of the screen. the config is no different from the regular rice (they share a home directory (probably a very bad idea)).
 - powermenu doesn't seem to work. i'll figure that out at a later point i can just run systemctl commands manually for now.

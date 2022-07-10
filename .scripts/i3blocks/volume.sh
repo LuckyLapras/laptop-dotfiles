@@ -1,27 +1,28 @@
-#!/bin/bash
+#!/bin/dash
 
-volume() {
 vol=$(/home/lily/.scripts/blocks/volume-pulse -w "MUTED")
 
 label=''
 
+case $vol in
+    100|[6-9]?) sym="墳"
+        ;;
+    [2-5]?)     sym="奔"
+        ;;
+    [1-9]|1?)   sym="奄"
+        ;;
+    *)          sym="ﱝ"
+esac
 
-if [[ $vol -le 20 ]]
-then
-	sym="奄"
-elif [[ $vol -le 60 ]]
-then
-	sym="奔"
-else
-	sym="墳"
-fi
+hphone=$(pactl list sinks | grep "Active Port" | awk '{print $3}')
+output=$(pactl get-default-sink)
 
-if [ "$vol" = "MUTED" ]
-then
-	sym="ﱝ"
-fi
+case $hphone in
+    analog-output-headphones) sym=""
+        ;;
+    *) case $output in
+        bluez_output*)        sym=""
+       esac
+esac
 
-printf $sym' '$vol'%%%%'
-}
-
-volume
+printf "$sym $vol%%\\n"
