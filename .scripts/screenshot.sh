@@ -6,7 +6,7 @@ mkdir -p $DIR
 export MESSAGE="File saved to $DIR/$FILENAME"
 
 notify() {
-`notify-send -i $DIR/$FILENAME "Screenshot taken!" "$MESSAGE"
+    notify-send -i $DIR/$FILENAME "Screenshot taken!" "$MESSAGE"
 }
 
 selection() (
