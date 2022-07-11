@@ -28,8 +28,8 @@ xsetroot -cursor_name left_ptr
 xset s off
 xset -dpms
 systemctl --user start autostart.target
+pgrep -x succade > /dev/null || succade &
 fcitx5 &
 mconnect &
 megasync &
-pgrep -x succade > /dev/null || succade &
 sleep 15; pkill -RTMIN+7 volume.sh; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)
