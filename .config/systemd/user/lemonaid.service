@@ -1,0 +1,6 @@
+[Unit]
+Description=fucking bullshit
+
+[Service]
+ExecStart=/usr/local/bin/lemonaid | /usr/bin/lemonbar -f "Cozette:size=5" -f "Siji-ng:size=10" -p -B "#292929" -F "#cccccc" -u 2 -g 1920x24+0+0
+

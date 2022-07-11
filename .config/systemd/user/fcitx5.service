@@ -1,0 +1,5 @@
+[Unit]
+Description=nihongo syabarenai
+
+[Service]
+ExecStart=/usr/bin/fcitx5

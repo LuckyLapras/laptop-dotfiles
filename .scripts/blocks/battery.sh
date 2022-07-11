@@ -25,13 +25,8 @@ battery() {
     [6-7]?) label=' '
         ;;
     [4-5]?) label=' '
-        case $(cat $BATC) in
-            59) case $(cat $BATS) in
-                Charging|Unknown) dunstify -r $NID 'i care that u transgender' 'u can stop charging yo damn laptop'
-                ;;
-                *)    dunstify -C $NID
-            esac
-        esac
+        { [ $(cat $BATC) -gt 58 ] && { [ $(cat $BATS) = "Charging" ] || [ $(cat $BATS) = "Unknown" ]; }; } && dunstify -r $NID 'i care that u transgender' 'u can stop charging yo damn laptop' || dunstify -C $NID
+       #{ [ $(cat $BATC) -gt 58 ] && { [ $(cat $BATS) = "Charging" ] || [ $(cat $BATS) = "Unknown" ]; }; } && echo cum || echo pee
         ;;
     [2-3]?) label=' '
         ;;
@@ -56,7 +51,10 @@ battery() {
             ;;
     esac
 
-    string="%%{+$uoline}%%{U$underline}$label$(cat $BATC)%%%%%%{U-}%%{-$uoline}%%{08}\\n"
+    #i want to have space for stalonetray after this block. there's probably a more elegant way to do this but for now i'll check stalonetray's size along with the battery and adjust the right margin accordingly
+    space=$(( 5 + $(xprop -name stalonetray -f WM_SIZE_HINTS 32i ' $5\n' WM_NORMAL_HINTS | awk '{print $2}') ))
+
+    string="%%{+$uoline}%%{U$underline}$label$(cat $BATC)%%%%%%{U-}%%{-$uoline}%%{O$space}\\n"
     printf "$string"
 }
 

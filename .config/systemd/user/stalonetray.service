@@ -1,0 +1,5 @@
+[Unit]
+Description=more bullshit
+
+[Service]
+ExecStart=/usr/bin/stalonetray

@@ -1,0 +1,5 @@
+[Unit]
+Description=no
+
+[Service]
+ExecStart=/home/lily/.scripts/lock.sh

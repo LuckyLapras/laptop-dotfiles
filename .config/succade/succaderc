@@ -1,7 +1,7 @@
 [bar]
 name = "testbar"
 blocks = "desktop cpu ram updates | cum title | brightness volume wifi datetime battery"
-width=1816
+width=1920
 height = 24
 areas = 16
 foreground = "#cccccc"

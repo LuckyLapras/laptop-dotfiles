@@ -1,7 +1,6 @@
 #! /bin/bash
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-pgrep -x succade > /dev/null || succade &
 pgrep bspswallow || bspswallow &
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 0
@@ -32,4 +31,5 @@ systemctl --user start autostart.target
 fcitx5 &
 mconnect &
 megasync &
-sleep 15; pkill -RTMIN+7 volume.sh
+pgrep -x succade > /dev/null || succade &
+sleep 15; pkill -RTMIN+7 volume.sh; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)

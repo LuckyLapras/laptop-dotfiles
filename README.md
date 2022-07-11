@@ -32,6 +32,7 @@ this is the distro i spend most of my time on my laptop in. it's a rather bad la
 
 - the rofi dmenu has rounded corners on all sides, which looks a lil bad. im considering switching to pure dmenu or just simply not using the themes but im not sure if that'll be worth it.
 - the battery script causes a huge cpu spike when (dis)connecting the charger (although that might just be bc my cpu's bad). im looking into some way to replace my current scripts with ones that use `inotifywait` to see if that has any effect.
+- the `xset s off` and `xset -dpms` commands seem to not always run and i can't figure out why. i have them in both .xinitrc or bspwmrc.
 
 ## kinnie rice
 

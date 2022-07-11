@@ -1,0 +1,5 @@
+[Unit]
+Description=u got games on ur phone?
+
+[Service]
+ExecStart=/usr/local/bin/mconnect
