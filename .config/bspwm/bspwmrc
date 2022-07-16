@@ -32,4 +32,4 @@ pgrep -x succade > /dev/null || succade &
 fcitx5 &
 mconnect &
 megasync &
-sleep 15; pkill -RTMIN+7 volume.sh; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)
+sleep 20; pkill -RTMIN+7 volume.sh; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)

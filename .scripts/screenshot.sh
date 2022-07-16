@@ -27,7 +27,7 @@ selection() (
     xdotool windowmove "$wid" 0 0
 
     # take the new screenshot by selection, pipe to clipboard
-    maim -s -u "$DIR/$FILENAME"
+    maim -s -r boxzoom -u "$DIR/$FILENAME"
 
     # kill feh
     kill "$feh_pid"
@@ -40,7 +40,7 @@ while getopts ":qaw" option; do
            xclip -selection clip -t image/png $DIR/$FILENAME
            notify
            exit;;
-        a) #maim -s -u $DIR/$FILENAME
+        a) #maim -s -r boxzoom -u $DIR/$FILENAME
            selection
            if [ -f $DIR/$FILENAME ]; then
                xclip -sel clip < /dev/null
