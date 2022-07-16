@@ -11,9 +11,9 @@ xidlehook \
     'grep 0 /sys/class/power_supply/ADP0/online > /dev/null && xbacklight =$(cat /tmp/bness.txt)' \
     `# Undim & lock after 30 more seconds` \
   --timer 30 \
-    'grep 0 /sys/class/power_supply/ADP0/online > /dev/null && i3lock -i /home/lily/Pictures/Wallpapers/yliaed.png && sleep 1&& xbacklight =$(cat /tmp/bness.txt)' \
+    'grep 0 /sys/class/power_supply/ADP0/online > /dev/null && i3lock -i /home/lily/Pictures/Wallpapers/yliaed.png && sleep 1 && xbacklight =$(cat /tmp/bness.txt)' \
     '' \
-  `# Finally, suspend an hour after it locks` \
+  `# Finally, suspend five minutes after it locks` \
   --timer 300 \
     'grep 0 /sys/class/power_supply/ADP0/online > /dev/null && systemctl suspend' \
     ''
