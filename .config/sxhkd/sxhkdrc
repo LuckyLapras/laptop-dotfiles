@@ -152,10 +152,10 @@ XF86AudioMicMute
 #brightness
 
 XF86MonBrightnessDown
-   xbacklight -10 && pkill -RTMIN+6 brightness.sh
+   xbacklight -fps 30 -dec 10 && pkill -RTMIN+6 brightness.sh
 
 XF86MonBrightnessUp
-   xbacklight +10 && pkill -RTMIN+6 brightness.sh
+   xbacklight -fps 30 -inc 10 && pkill -RTMIN+6 brightness.sh
 
 #rofi
 

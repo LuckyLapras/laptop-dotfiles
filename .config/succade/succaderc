@@ -1,6 +1,6 @@
 [bar]
 name = "testbar"
-blocks = "desktop cpu ram updates | cum title | brightness volume wifi datetime battery"
+blocks = "desktop cpu ram updates mount | title | brightness volume wifi datetime battery"
 width=1920
 height = 24
 areas = 16
@@ -63,5 +63,10 @@ raw = true
 
 [updates]
 command = /home/lily/.scripts/blocks/updates.sh
-label = " "
+raw=true
 mouse-left = "st sudo pacman -Syu"
+
+[mount]
+command = /home/lily/.scripts/blocks/mounts.sh
+raw = true
+mouse-left = "umount_dmenu"

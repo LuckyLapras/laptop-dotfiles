@@ -38,7 +38,7 @@ exec_always --no-startup-id sh $locker &
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # exec --no-startup-id nm-applet
 
-exec --no-startup-id picom &
+exec --no-startup-id picom -b
 exec_always --no-startup-id feh --bg-scale /home/lily/Pictures/Wallpapers/bluebg.png
 
 # Use pactl to adjust volume in PulseAudio.

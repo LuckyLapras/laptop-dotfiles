@@ -4,12 +4,12 @@ battery() {
     BATC=/sys/class/power_supply/BAT0/capacity
     BATS=/sys/class/power_supply/BAT0/status
 
-    #need to set an arbitrarily high NID for dunst
-    #maybe it doesn't need to be arbitrarily high i just thought it'd be safer
+    # need to set an arbitrarily high NID for dunst
+    # maybe it doesn't need to be arbitrarily high i just thought it'd be safer
     NID=420
-    #(i choose the funny weed number :3)
+    # (i choose the funny weed number :3)
 
-    #define some colours
+    # define some colours
     norm="#f7a8b8"
     crit="#cd1338"
     char="#86dcfd"
@@ -26,7 +26,6 @@ battery() {
         ;;
     [4-5]?) label=' '
         { [ $(cat $BATC) -gt 58 ] && { [ $(cat $BATS) = "Charging" ] || [ $(cat $BATS) = "Unknown" ]; }; } && dunstify -r $NID 'i care that u transgender' 'u can stop charging yo damn laptop' || dunstify -C $NID
-       #{ [ $(cat $BATC) -gt 58 ] && { [ $(cat $BATS) = "Charging" ] || [ $(cat $BATS) = "Unknown" ]; }; } && echo cum || echo pee
         ;;
     [2-3]?) label=' '
         ;;
@@ -41,17 +40,20 @@ battery() {
     label="%%{F#ec3257}"$label"%%{F-}"
 
     case $(cat $BATS) in
-        Charging|Unknown) [ $(cat $BATC) -le 20 ] && dunstify -C $NID
+        Charging|Unknown) num=$(cat $BATC)
+            [ num -le 20 ] && dunstify -C $NID
+            [ num -ge 60 ] && dunstify -r $NID 'how tf'
             underline=$char
             ;;
         Full)             dunstify -r $NID 'how tf'
             underline=$char
             ;;
-        *)                [ $(cat $BATC) -gt 20 ] && [ $(cat $BATC) -le 58 ] && dunstify -C $NID
+        *)                dunstify -C $NID
             ;;
     esac
 
-    #i want to have space for stalonetray after this block. there's probably a more elegant way to do this but for now i'll check stalonetray's size along with the battery and adjust the right margin accordingly
+    # i want to have space for stalonetray after this block. there's probably a more elegant way to do this but for now
+    # i'll check stalonetray's size along with the battery and adjust the right margin accordingly
     space=$(( 5 + $(xprop -name stalonetray -f WM_SIZE_HINTS 32i ' $5\n' WM_NORMAL_HINTS | awk '{print $2}') ))
 
     string="%%{+$uoline}%%{U$underline}$label$(cat $BATC)%%%%%%{U-}%%{-$uoline}%%{O$space}\\n"

@@ -25,8 +25,6 @@ picom &
 dunst &
 feh --bg-scale /home/lily/Pictures/Wallpapers/rinabg.jpg
 xsetroot -cursor_name left_ptr
-xset s off
-xset -dpms
 systemctl --user start autostart.target
 pgrep -x succade > /dev/null || succade &
 fcitx5 &
