@@ -25,7 +25,7 @@ battery() {
     [6-7]?) label=' '
         ;;
     [4-5]?) label=' '
-        { [ $(cat $BATC) -gt 58 ] && { [ $(cat $BATS) = "Charging" ] || [ $(cat $BATS) = "Unknown" ]; }; } && dunstify -r $NID 'i care that u transgender' 'u can stop charging yo damn laptop' || dunstify -C $NID
+        { [ $(cat $BATC) -gt 59 ] && { [ $(cat $BATS) = "Charging" ] || [ $(cat $BATS) = "Unknown" ] || [ $(cat $BATS) = "Not charging"; }; } && dunstify -r $NID 'i care that u transgender' 'u can stop charging yo damn laptop' || dunstify -C $NID
         ;;
     [2-3]?) label=' '
         ;;
@@ -40,9 +40,9 @@ battery() {
     label="%%{F#ec3257}"$label"%%{F-}"
 
     case $(cat $BATS) in
-        Charging|Unknown) num=$(cat $BATC)
-            [ num -le 20 ] && dunstify -C $NID
-            [ num -ge 60 ] && dunstify -r $NID 'how tf'
+        Charging|Unknown|"Not charging") num=$(cat $BATC)
+            [ num -ge 20 ] && dunstify -C $NID
+            [ num -ge 61 ] && dunstify -r $NID 'how tf'
             underline=$char
             ;;
         Full)             dunstify -r $NID 'how tf'
@@ -52,8 +52,9 @@ battery() {
             ;;
     esac
 
-    # i want to have space for stalonetray after this block. there's probably a more elegant way to do this but for now
-    # i'll check stalonetray's size along with the battery and adjust the right margin accordingly
+    # i want to have space for stalonetray after this block. there\'s probably a more elegant way to do this but for now
+    # i\'ll check stalonetray\'s size along with the battery and adjust the right margin accordingly
+    # (the backslashes are here bc leaving them out fucks with syntax highlighting)
     space=$(( 5 + $(xprop -name stalonetray -f WM_SIZE_HINTS 32i ' $5\n' WM_NORMAL_HINTS | awk '{print $2}') ))
 
     string="%%{+$uoline}%%{U$underline}$label$(cat $BATC)%%%%%%{U-}%%{-$uoline}%%{O$space}\\n"

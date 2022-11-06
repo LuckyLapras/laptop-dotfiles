@@ -19,7 +19,7 @@ if [[ $(cat "$file") = "" ]]; then
 fi
 
 case $(cat $BATS) in
-    Charging|Unknown|Full) xbacklight -get > "$file" && xbacklight -fps 30 -set 100
+    Charging|Unknown|Full|"Not charging") xbacklight -get > "$file" && xbacklight -fps 30 -set 100
         ;;
     *) xbacklight -fps 30 -set $(cat "$file")
 esac

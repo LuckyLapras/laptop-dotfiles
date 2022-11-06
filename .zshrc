@@ -71,6 +71,8 @@ alias wine32='WINEPREFIX=~/.wine32 wine'
 
 notes() { vim ".notes/$@"; }
 
+backup() { cp $@ $@.bak }
+
 # ls
 alias ls='ls -h --color=auto'
 alias ll='ls -alh --color=auto'
