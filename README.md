@@ -51,7 +51,6 @@ this installation is designed for me to simply open up mixxx and do a funky lil 
 
 - i dislike i3blocks and the i3bar. i really should try and switch to lemonbar/succade at some point but i can't seem to figure out how to get the powerline arrows working. i don't know why im so fixated on it looking like powerline.
   - the arrows are created by using a separator blocklet which contains a single character from the font im using but bc it's a bitmap font it looks kinda terrible being manipulated the way it is
-  - [xtitle](https://github.com/baskerville/xtitle) doesn't always work nicely. i've tried a workaround (see .scripts/i3blocks/title.sh) but that doesn't work. i've got a lil work around in the .i3blocks.conf but that doesn't always hold up either
+  - [xtitle](https://github.com/baskerville/xtitle) doesn't always work nicely. i've tried a workaround (see .scripts/i3blocks/title.sh) but that doesn't work. i've got a lil workaround in the .i3blocks.conf but that doesn't always hold up either
   - the black line at the top of the bar is kinda annoying. cannot find any way to get rid of it.
 - dunst insists on taking up the full width of the screen. the config is no different from the regular rice (they share a home directory (probably a very bad idea)).
-- powermenu doesn't seem to work. i'll figure that out at a later point i can just run systemctl commands manually for now.

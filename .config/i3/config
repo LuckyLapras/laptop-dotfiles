@@ -70,7 +70,7 @@ bindcode $mod+40 exec "/home/lily/.config/rofi/launchers/text/launcher.sh"
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-bindsym $mod+p exec --no-startup-id "sh /home/lily/.config/rofi/applets/android/powermenu.sh"
+bindsym $mod+p exec --no-startup-id "$HOME/.config/rofi/applets/android/powermenu.sh"
 bindsym $mod+q exec --no-startup-id "networkmanager_dmenu"
 
 

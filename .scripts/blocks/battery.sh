@@ -1,8 +1,8 @@
 #!/bin/dash
 
 battery() {
-    BATC=/sys/class/power_supply/BAT0/capacity
-    BATS=/sys/class/power_supply/BAT0/status
+    BATC=$(cat /sys/class/power_supply/BAT0/capacity)
+    BATS=$(cat /sys/class/power_supply/BAT0/status)
 
     # need to set an arbitrarily high NID for dunst
     # maybe it doesn't need to be arbitrarily high i just thought it'd be safer
@@ -17,7 +17,7 @@ battery() {
     uoline=u
     underline=$norm
 
-    case $(cat $BATC) in
+    case $BATC in
     100)    label=' '
         ;;
     [8-9]?) label=' '
@@ -25,13 +25,13 @@ battery() {
     [6-7]?) label=' '
         ;;
     [4-5]?) label=' '
-        { [ $(cat $BATC) -gt 59 ] && { [ $(cat $BATS) = "Charging" ] || [ $(cat $BATS) = "Unknown" ] || [ $(cat $BATS) = "Not charging"; }; } && dunstify -r $NID 'i care that u transgender' 'u can stop charging yo damn laptop' || dunstify -C $NID
+        { [ $BATC -gt 59 ] && { [ $BATS = "Charging" ] || [ $BATS = "Unknown" ] || [ $BATS = "Not charging" ]; }; } && dunstify -r $NID 'i care that u transgender' 'u can stop charging yo damn laptop' || dunstify -C $NID
         ;;
     [2-3]?) label=' '
         ;;
     *)      underline=$crit
         label=' '
-        case $(cat $BATS) in
+        case $BATS in
             Discharging) dunstify -u critical -r $NID 'i dont care if u transgender' 'charge yo damn laptop'
         esac
         ;;
@@ -39,16 +39,16 @@ battery() {
 
     label="%%{F#ec3257}"$label"%%{F-}"
 
-    case $(cat $BATS) in
-        Charging|Unknown|"Not charging") num=$(cat $BATC)
-            [ num -ge 20 ] && dunstify -C $NID
-            [ num -ge 61 ] && dunstify -r $NID 'how tf'
+    case $BATS in
+        Charging|Unknown|"Not charging") 
+            [ $BATC -ge 20 ] && dunstify -C $NID
+            [ $BATC -ge 61 ] && dunstify -r $NID 'how tf'
             underline=$char
             ;;
         Full)             dunstify -r $NID 'how tf'
             underline=$char
             ;;
-        *)                dunstify -C $NID
+        *)  { [ $BATS = "Charging" || [ $BATS = "Unknown" ]; } && dunstify -C $NID
             ;;
     esac
 
@@ -57,7 +57,7 @@ battery() {
     # (the backslashes are here bc leaving them out fucks with syntax highlighting)
     space=$(( 5 + $(xprop -name stalonetray -f WM_SIZE_HINTS 32i ' $5\n' WM_NORMAL_HINTS | awk '{print $2}') ))
 
-    string="%%{+$uoline}%%{U$underline}$label$(cat $BATC)%%%%%%{U-}%%{-$uoline}%%{O$space}\\n"
+    string="%%{+$uoline}%%{U$underline}$label$BATC%%%%%%{U-}%%{-$uoline}%%{O$space}\\n"
     printf "$string"
 }
 
