@@ -39,4 +39,4 @@ st.borderpx:    4
 *.color7:       #809dad
 *.color15:      #f8dfff
 
-*font:          Cozette:style=Medium:size=8
+*font:          Cozette

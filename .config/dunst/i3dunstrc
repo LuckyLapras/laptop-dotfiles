@@ -26,7 +26,7 @@
     # constant width of 300
     #width = 300
 
-    geometry = "300x300-10+34"
+    geometry = "300x300-10+10"
 
     # The maximum height of a single notification, excluding the frame.
     #height = 300

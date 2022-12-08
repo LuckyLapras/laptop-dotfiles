@@ -1,19 +1,18 @@
-#!/bin/bash
+#!/bin/dash
 
 brightness() {
-bness=''
-#label="%%{F#ec3257} %%{F-}"
+    brightn=$(xbacklight -get)
+    bness=${brightn%.*}
 
-brightness=$(xbacklight -get)
-bness=${brightness%.*}
-
-printf '%%{+u}%%{U#f7a8b8}%%{T2}%%{F#ec3257} %%{F-}%%{T-}'$bness'%%{-u}'
+    printf "%%{B#C3EDFE} $bness%%{O5}%%{F#AFE7FE}%%{F-}%%{B-}"
 }
 
 trap 'brightness' 40
 
+brightness
+
 while :;
 do
-#	sleep 1
+	sleep infinity &
 	wait
 done
