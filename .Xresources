@@ -40,3 +40,4 @@ st.borderpx:    4
 *.color15:      #f8dfff
 
 *font:          Cozette
+Xcursor.theme:  Bibata-Modern-Classic
