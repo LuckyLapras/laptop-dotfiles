@@ -78,7 +78,35 @@ alias ls='ls -h --color=auto'
 alias ll='ls -alh --color=auto'
 alias ld='ls -dlh .* --color=auto'
 
-precmd () {printf '\033];%s\a' "${PWD/$HOME/~} - $(pstree -sA $$ | awk -F "---" '{ print $2 }')"}
+preexec() {
+    cmd_start_date=$(date +%s)
+    cmd_name=$1
+}
+
+precmd () {
+    cmd_status=$?
+
+    if [[ -n $DISPLAY ]];
+    then
+        printf '\033];%s\a' "${PWD/$HOME/~} - $(pstree -sA $$ | awk -F "---" '{ print $2 }')"
+        if [[ -n $cmd_start_date ]];
+        then
+            case $cmd_name in
+                vim*|bash|mpv*|man*|python|bluetoothctl|htop) :
+                    ;;
+                *)  cmd_end_date=$(date +%s)
+                    cmd_elapsed=$(($cmd_end_date - $cmd_start_date))
+                    elapsed_read=$(date -u -d @${cmd_elapsed} +"%T")
+                    cmd_notify_thresh=60
+
+                    if [[ $cmd_elapsed -gt $cmd_notify_thresh ]];
+                    then
+                        notify-send -a 'zsh' -u critical 'Command finished!' "\"$cmd_name\" has finished executing after $elapsed_read with status $cmd_status."
+                    fi
+            esac
+        fi
+    fi
+}
 
 setopt CORRECT
 

@@ -61,6 +61,7 @@ let g:airline_theme='base16_lily'
 :set shiftwidth=4
 :set expandtab
 :set title
+:set clipboard=unnamed
 set equalalways
 
 " this is a funky lil workaround for the super+shift+c shortcut in sxhkd

@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = bar update
+When = PostTransaction
+Exec = /home/lily/.scripts/blocks/refresh_updates.sh

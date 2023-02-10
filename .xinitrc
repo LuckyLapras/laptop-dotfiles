@@ -25,6 +25,6 @@ xset s off
 xset -dpms
 
 case $NAME in
-    "Arch Linux")   export DESKTOP_SESSION="bspwm" && exec bspwm ;;
-    *)              export DESKTOP_SESSION="i3" && exec i3 ;;
+    "Arch Linux")   exec bspwm ;;
+    "Ubuntu")       exec i3 ;;
 esac

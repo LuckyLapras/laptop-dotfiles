@@ -175,3 +175,8 @@ ctrl + Print
 
 ctrl + shift + Print
    /home/lily/.scripts/screenshot.sh -w
+
+#notifications
+
+super + {comma,period}
+    dunstctl {close-all,history-pop}

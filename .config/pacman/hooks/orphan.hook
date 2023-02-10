@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = orphan detection
+When = PostTransaction
+Exec = /usr/bin/bash -c 'printf "=> There are $(pacman -Qtd | wc -l) orphaned package(s).\n=>    pacman -Qtdq | sudo pacman -Rns -"'

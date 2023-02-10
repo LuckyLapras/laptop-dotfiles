@@ -1,9 +1,9 @@
 [bar]
 name = "testbar"
-blocks = "desktop cpu ram updates mount | title | brightness volume wifi datetime battery"
+blocks = "desktop cpu ram updates mount bluetooth | title | brightness volume wifi datetime battery"
 width=1920
 height = 24
-areas = 16
+areas = 17
 foreground = "#cccccc"
 background = "#292929"
 line-color = "#f7a8b8"
@@ -19,9 +19,10 @@ margin = 8
 padding = 0
 underline = true
 live = true
+min_width = 20
 
 [desktop]
-command = /home/lily/.scripts/blocks/workspaces.sh
+command = ~/.scripts/blocks/workspaces.sh
 trigger = bspc subscribe
 raw = true
 
@@ -30,43 +31,48 @@ command = "date +'%Y-%m-%d %H:%M:%S'"
 interval = 1
 
 [cpu]
-command = /home/lily/.scripts/blocks/cpu-proc -m -u
+command = ~/.scripts/blocks/cpu-proc -m -u
 label = " "
 mouse-left = "st htop"
 
 [ram]
-command = /home/lily/.scripts/blocks/mem-proc -m -u
+command = ~/.scripts/blocks/mem-proc -m -u
 label = " "
 mouse-left = "st htop"
 
 [title]
-command = /home/lily/.scripts/blocks/xtitle -s -t 131
+command = ~/.scripts/blocks/xtitle -s -t 131
 
 [wifi]
-command = /home/lily/.scripts/blocks/wifi.sh
+command = ~/.scripts/blocks/wifi.sh
 raw = true
 mouse-left = networkmanager_dmenu
 
 [volume]
-command = /home/lily/.scripts/blocks/volume.sh
+command = ~/.scripts/blocks/volume.sh
 raw = true
 mouse-left = pavucontrol
 
 [battery]
-command = /home/lily/.scripts/blocks/battery.sh
+command = ~/.scripts/blocks/battery.sh
 raw = true
-mouse-left = /home/lily/.config/rofi/applets/android/powermenu.sh
+mouse-left = ~/.config/rofi/applets/android/powermenu.sh
 
 [brightness]
-command = /home/lily/.scripts/blocks/brightness.sh
+command = ~/.scripts/blocks/brightness.sh
 raw = true
 
 [updates]
-command = /home/lily/.scripts/blocks/updates.sh
+command = ~/.scripts/blocks/updates.sh
 raw=true
 mouse-left = "st sudo pacman -Syu"
 
 [mount]
-command = /home/lily/.scripts/blocks/mounts.sh
+command = ~/.scripts/blocks/mounts.sh
 raw = true
 mouse-left = "umount_dmenu"
+
+[bluetooth]
+command = python ~/.scripts/blocks/bluetooth.py
+raw = true
+mouse-left = rofi-bluetooth

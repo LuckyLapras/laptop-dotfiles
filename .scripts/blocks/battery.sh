@@ -24,9 +24,11 @@ battery() {
         ;;
     [6-7]?) label=' '
         case $BATS in
-            Charging|Unknown|"Not Charging") dunstify -r $NID 'i care that u transgender' 'u can stop charging yo damn laptop'
+            Charging|Unknown|"Not Charging") notify-send -r $NID 'i care that u transgender' 'u can stop charging yo damn laptop' -a 'battery.sh'
                 ;;
             *) dunstify -C $NID
+                ;;
+        esac
         ;;
     [4-5]?) label=' '
         ;;
@@ -35,7 +37,7 @@ battery() {
     *)      underline=$crit
         label=' '
         case $BATS in
-            Discharging) dunstify -u critical -r $NID 'i dont care if u transgender' 'charge yo damn laptop'
+            Discharging) notify-send -u critical -r $NID 'i dont care if u transgender' 'charge yo damn laptop' -a 'battery.sh'
                 ;;
             *) dunstify -C $NID
                 ;;
@@ -47,7 +49,7 @@ battery() {
 
     case $BATS in
         Charging|Unknown|"Not charging"|Full)
-            [ $BATC -ge 61 ] && dunstify -r $NID 'how tf'
+            [ $BATC -ge 61 ] && notify-send -r $NID 'how tf' -a 'battery.sh'
             underline=$char
             ;;
         *)  dunstify -C $NID

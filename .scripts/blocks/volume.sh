@@ -5,25 +5,6 @@ vol=$(/home/lily/.scripts/blocks/volume-pulse -w "MUTED")
 
 label=''
 
-#if [ $vol -le 20 ]
-#then
-#	uline="%%{U#f7a8b8}"
-#	sym="奄"
-#elif [ $vol -le 60 ]
-#then
-#	uline="%%{U#f7a8b8}"
-#	sym="奔"
-#else
-#	uline="%%{U#ec3257}"
-#	sym="墳"
-#fi
-#
-#if [ "$vol" = "MUTED" ]
-#then
-#	uline="%%{U#cccccc}"
-#	sym="ﱝ"
-#fi
-
 case $vol in
     100|[6-9]?) uline="%%{U#ec3257}"
                 sym="墳"
@@ -34,20 +15,12 @@ case $vol in
     [1-9]|1?)   uline="%%{U#f7a8b8}"
                 sym="奄"
         ;;
-    *)          uline="%%{U#cccccc}"
+    *)          uline="%%{U#696969}"
                 sym="ﱝ"
 esac
 
 hphone=$(pactl list sinks | grep "Active Port" | awk '{print $3}')
 output=$(pactl get-default-sink)
-
-#if [ "$hphone" = "analog-output-headphones" ]
-#then
-#	sym=""
-#elif [ "$output" = "bluez_output"* ]
-#then
-#	sym=""
-#fi
 
 case $hphone in
     analog-output-headphones) sym=""
