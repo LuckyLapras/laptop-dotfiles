@@ -24,7 +24,7 @@ compinit
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PATH=$PATH:/home/lily/.local/bin:/home/lily/.scripts:/home/lily/.scripts/realbar
+PATH=$PATH:/home/lily/.local/bin:/home/lily/.scripts:/home/lily/.scripts/realbar:$HOME/.local/usr/bin
 
 PANEL_FIFO=/tmp/panel-fifo
 PANEL_HEIGHT=24
@@ -73,6 +73,15 @@ notes() { vim ".notes/$@"; }
 
 backup() { cp $@ $@.bak }
 
+dunzip() {
+    if unzip -l "$1" | sed -n 5p | grep '/' &> /dev/null
+    then
+        unzip "$1"
+    else
+        unzip "$1" -d "${1%.zip}"
+    fi
+}
+
 # ls
 alias ls='ls -h --color=auto'
 alias ll='ls -alh --color=auto'
@@ -81,6 +90,10 @@ alias ld='ls -dlh .* --color=auto'
 preexec() {
     cmd_start_date=$(date +%s)
     cmd_name=$1
+    if [[ -n $DISPLAY ]];
+    then
+        org_ws=$(wmctrl -d | awk '{ if ($2 == "*") print $9}')
+    fi
 }
 
 precmd () {
@@ -91,19 +104,20 @@ precmd () {
         printf '\033];%s\a' "${PWD/$HOME/~} - $(pstree -sA $$ | awk -F "---" '{ print $2 }')"
         if [[ -n $cmd_start_date ]];
         then
-            case $cmd_name in
-                vim*|bash|mpv*|man*|python|bluetoothctl|htop) :
-                    ;;
-                *)  cmd_end_date=$(date +%s)
-                    cmd_elapsed=$(($cmd_end_date - $cmd_start_date))
-                    elapsed_read=$(date -u -d @${cmd_elapsed} +"%T")
-                    cmd_notify_thresh=60
+            cur_ws=$(wmctrl -d | awk '{ if ($2 == "*") print $9}')
+            if [[ "$org_ws" != "$cur_ws" ]];
+            then
+                cmd_end_date=$(date +%s)
+                cmd_elapsed=$(($cmd_end_date - $cmd_start_date))
+                elapsed_read=$(date -u -d @${cmd_elapsed} +"%T")
+                cmd_notify_thresh=60
 
-                    if [[ $cmd_elapsed -gt $cmd_notify_thresh ]];
-                    then
-                        notify-send -a 'zsh' -u critical 'Command finished!' "\"$cmd_name\" has finished executing after $elapsed_read with status $cmd_status."
-                    fi
-            esac
+                if [[ $cmd_elapsed -gt $cmd_notify_thresh ]];
+                then
+                    notify-send -a 'zsh' -u critical 'Command finished!' \
+                    "\"$cmd_name\" has finished executing after $elapsed_read with status $cmd_status on workspace $org_ws."
+                fi
+            fi
         fi
     fi
 }

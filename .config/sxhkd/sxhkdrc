@@ -163,7 +163,10 @@ super + p
    /home/lily/.config/rofi/applets/android/powermenu.sh
 
 super + w
-   networkmanager_dmenu
+   rofi -show wifi -modi "wifi:iwdrofimenu" -theme $HOME/.config/polybar/shades/scripts/rofi/unmount.rasi
+
+super + b
+    rofi-bluetooth
 
 #screenshots
 

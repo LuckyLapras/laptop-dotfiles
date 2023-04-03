@@ -30,9 +30,10 @@ this is the distro i spend most of my time on my laptop in. it's a rather bad la
 
 ### known issues
 
-- the rofi dmenu has rounded corners on all sides, which looks a lil bad. im considering switching to pure dmenu or just simply not using the themes but im not sure if that'll be worth it.
+- ~~the rofi dmenu has rounded corners on all sides, which looks a lil bad. im considering switching to pure dmenu or just simply not using the themes but im not sure if that'll be worth it.~~ this has been fixed by simply introducing an x-offset to the rofi theme file. afaik that's the only way to do this rn but i'll leave this here so i remember to come back to it in case it does become and option in the future.
 - the battery script causes a huge cpu spike when (dis)connecting the charger ~~(although that might just be bc my cpu's bad). im looking into some way to replace my current scripts with ones that use `inotifywait` to see if that has any effect.~~ i believe this has something to do with acpi. when i run `sudo udevadm control --log-priority=debug` and `journalctl -f` i see `ACPI group/action undefined: processor / LNXCPU:0x` which does not appear when im booted into ubuntu. i cannot figure out why this happens.
 - the `xset s off` and `xset -dpms` commands seem to not always run and i can't figure out why. i have them in both .xinitrc or bspwmrc. the last command in bspwmrc has a similar problem, although that might be slightly more complex.
+- the bluetooth bar module will always report "Powered" on boot or when waking from suspend, which is very much not the case. i cannot figure out why this happens or how to fix it. im currently working around this by [turning bluetooth on and off again](https://askubuntu.com/a/1146734)
 
 ## kinnie rice
 

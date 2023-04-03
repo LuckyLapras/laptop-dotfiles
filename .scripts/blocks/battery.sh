@@ -26,7 +26,7 @@ battery() {
         case $BATS in
             Charging|Unknown|"Not Charging") notify-send -r $NID 'i care that u transgender' 'u can stop charging yo damn laptop' -a 'battery.sh'
                 ;;
-            *) dunstify -C $NID
+            *) notify-send -C $NID
                 ;;
         esac
         ;;
@@ -39,7 +39,7 @@ battery() {
         case $BATS in
             Discharging) notify-send -u critical -r $NID 'i dont care if u transgender' 'charge yo damn laptop' -a 'battery.sh'
                 ;;
-            *) dunstify -C $NID
+            *) notify-send -C $NID
                 ;;
         esac
         ;;
@@ -51,14 +51,10 @@ battery() {
         Charging|Unknown|"Not charging"|Full)
             [ $BATC -ge 61 ] && notify-send -r $NID 'how tf' -a 'battery.sh'
             underline=$char
-            ;;
-        *)  dunstify -C $NID
-            ;;
     esac
 
-    # i want to have space for stalonetray after this block. there\'s probably a more elegant way to do this but for now
-    # i\'ll check stalonetray\'s size along with the battery and adjust the right margin accordingly
-    # (the backslashes are here bc leaving them out fucks with syntax highlighting)
+    # i want to have space for stalonetray after this block. there's probably a more elegant way to do this but for now
+    # i'll check stalonetray's size along with the battery and adjust the right margin accordingly
     space=$(( 5 + $(xprop -name stalonetray -f WM_SIZE_HINTS 32i ' $5\n' WM_NORMAL_HINTS | awk '{print $2}') ))
 
     string="%%{+$uoline}%%{U$underline}$label$BATC%%%%%%{U-}%%{-$uoline}%%{O$space}\\n"

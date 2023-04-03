@@ -15,17 +15,18 @@ mngr_iface = 'org.freedesktop.DBus.ObjectManager'
 adapter_iface = 'org.bluez.Adapter1'
 
 def render(powered, connected):
-    sym = ''
-    spacing = '2'
+    sym = ' '
     if powered is True and connected is True:
         col_line = col_con
+        text = 'Connected'
     elif powered is True and connected is False:
         col_line = col_on
+        text = 'Powered'
     else:
-        sym = ''
-        spacing = '3'
+        sym = ' '
         col_line = col_off
-    fd.write('%{+u}%{U' + col_line + '}%{O' + spacing + '}%{F#ec3257}' + sym + '%{F-}%{O' + spacing + '}%{U-}%{-u}')
+        text = 'Unpowered'
+    fd.write('%{+u}%{U' + col_line + '}%{F#ec3257}' + sym + '%{F-}' + text + '%{U-}%{-u}\n')
     fd.flush()
 
 def init():

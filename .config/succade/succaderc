@@ -41,7 +41,7 @@ label = " "
 mouse-left = "st htop"
 
 [title]
-command = ~/.scripts/blocks/xtitle -s -t 131
+command = ~/.scripts/blocks/xtitle -s -t 101
 
 [wifi]
 command = ~/.scripts/blocks/wifi.sh
