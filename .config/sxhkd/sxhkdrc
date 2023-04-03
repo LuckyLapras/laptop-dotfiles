@@ -8,7 +8,8 @@ super + Return
 
 # program launcher
 super + d
-    /home/lily/.config/rofi/launchers/text/launcher.sh
+    rofi -no-lazy-grab -show drun -modi run,drun,window \
+    -theme /home/lily/.config/rofi/launcher.rasi
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -160,10 +161,10 @@ XF86MonBrightnessUp
 #rofi
 
 super + p
-   /home/lily/.config/rofi/applets/android/powermenu.sh
+   /home/lily/.config/rofi/powermenu.sh
 
 super + w
-   rofi -show wifi -modi "wifi:iwdrofimenu" -theme $HOME/.config/polybar/shades/scripts/rofi/unmount.rasi
+   rofi -show wifi -modi "wifi:iwdrofimenu" -theme $HOME/.config/rofi/iwd.rasi
 
 super + b
     rofi-bluetooth

@@ -46,7 +46,7 @@ command = ~/.scripts/blocks/xtitle -s -t 101
 [wifi]
 command = ~/.scripts/blocks/wifi.sh
 raw = true
-mouse-left = networkmanager_dmenu
+mouse-left = rofi -show wifi -modi "wifi:iwdrofimenu" -theme ~/.config/rofi/iwd.rasi
 
 [volume]
 command = ~/.scripts/blocks/volume.sh
@@ -56,7 +56,7 @@ mouse-left = pavucontrol
 [battery]
 command = ~/.scripts/blocks/battery.sh
 raw = true
-mouse-left = ~/.config/rofi/applets/android/powermenu.sh
+mouse-left = ~/.config/rofi/powermenu.sh
 
 [brightness]
 command = ~/.scripts/blocks/brightness.sh

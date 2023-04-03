@@ -23,7 +23,7 @@ this repo houses two different rices. i dual-boot arch and ubuntu (studio) on th
   - vim plugins: [vim-airline](https://github.com/vim-airline/vim-airline)
     - airline theme: a small modification of [base16\_vim](https://github.com/vim-airline/vim-airline/blob/master/autoload/airline/themes/dark.vim), edited such that replace mode doesn't suck
 - wallpaper: made by my good friend [emile toaster\_chan\_](https://twitter.com/toaster_chan_) (commission emile)
-- rofi themes: text launcher and android powermenu from [adi1090x](https://github.com/adi1090x/rofi)
+- rofi themes: text launcher and android powermenu adapted from [adi1090x](https://github.com/adi1090x/rofi)
 - font: [cozette](https://github.com/slavfox/Cozette)
 
 this is the distro i spend most of my time on my laptop in. it's a rather bad laptop so i've made it as minimal as i possibly can with my current knowledge. please feel free to ask me about whatever's going on in here and also suggest ways in which i can do better.
