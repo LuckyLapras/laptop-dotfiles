@@ -6,4 +6,4 @@ Target = *
 [Action]
 Description = reset keyboard layout
 When = PostTransaction
-Exec = setxkbmap gb
+Exec = /usr/bin/bash -c 'setxkbmap gb'

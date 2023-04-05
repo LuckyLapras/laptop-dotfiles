@@ -13,7 +13,7 @@ configuration {
     fixed-num-lines: 				true;
     show-icons: 					false;
     sidebar-mode: 					true;
-    scroll-method: 					0;
+    scroll-method: 					1;
     window-format: 					"[{w}] {t}";
     click-to-exit: 					true;
     combi-hide-mode-prefix: 		false;

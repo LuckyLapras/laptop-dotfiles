@@ -15,6 +15,7 @@ configuration {
     sidebar-mode: 					true;
     scroll-method: 					0;
     click-to-exit: 					true;
+    display-bluetooth:              "";
 }
 
 @import "colours.rasi"

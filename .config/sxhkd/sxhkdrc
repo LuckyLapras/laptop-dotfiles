@@ -164,7 +164,7 @@ super + p
    /home/lily/.config/rofi/powermenu.sh
 
 super + w
-   rofi -show wifi -modi "wifi:iwdrofimenu" -theme $HOME/.config/rofi/iwd.rasi
+   rofi -show wifi -modi "wifi:iwdrofimenu,drun" -theme $HOME/.config/rofi/iwd.rasi
 
 super + b
     rofi-bluetooth

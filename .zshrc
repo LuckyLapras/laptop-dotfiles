@@ -126,6 +126,10 @@ setopt CORRECT
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 
+echo -e 'DO THESE THINGS\n'
+todo
+echo -e '\n'
+
 source /home/lily/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/src/powerlevel10k/powerlevel10k.zsh-theme
 

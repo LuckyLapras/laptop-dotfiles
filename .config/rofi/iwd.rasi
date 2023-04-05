@@ -15,6 +15,7 @@ configuration {
     sidebar-mode: 					true;
     scroll-method: 					0;
     click-to-exit: 					true;
+    display-wifi:                   "直 ";
 }
 
 @import "colours.rasi"
@@ -40,7 +41,7 @@ textbox-prompt-colon {
     expand:                         false;
     text-color:                     @fg;
     font:                           "Cozette 10";
-    str:                            "直";
+    str:                            "";
 }
 
 prompt {
@@ -49,11 +50,16 @@ prompt {
     text-color: 					@fg;
 }
 
+entry {
+    padding:                        0px 5px 0px 0px;
+    text-color:                     @bg;
+}
+
 inputbar {
     spacing:    					0px;
     text-color: 					@fg;
     padding:    					1px;
-    children: 						[ textbox-prompt-colon, prompt, entry ];
+    children: 						[ prompt, entry ];
 }
 
 mainbox {
@@ -104,6 +110,22 @@ sidebar {
     border:       					0px;
     border-color: 					@ac;
     border-radius: 					0px;
+}
+
+button {
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    background-color:               @red;
+    margin:                         5px;
+    padding:                        5px;
+    text-color:                     @fg;
+    border:                         0px;
+    border-radius:                  4px;
+    border-color:                   @fg;
+}
+
+button selected {
+    background-color:               @green;
 }
 
 scrollbar {

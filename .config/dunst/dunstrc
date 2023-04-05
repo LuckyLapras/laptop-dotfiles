@@ -60,6 +60,8 @@
     # Set the maximum width for the progress bar
     progress_bar_max_width = 300
 
+    progress_bar_corner_radius = 5
+
 
     # Show how many messages are currently hidden (because of
     # notification_limit).
@@ -151,7 +153,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b\n<span font_style="oblique" baseline_shift="-50pt">%a</span>"
+    format = "<b>%s</b>\n  %b\n<span font_style="oblique" baseline_shift="-25pt">%a</span>"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".

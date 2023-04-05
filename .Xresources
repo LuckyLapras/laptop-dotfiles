@@ -5,7 +5,7 @@
 *.background:   #181e34
 *.cursorColor:  #7b83b4
 *.alpha:        0.92
-st.borderpx:    4
+st.borderpx:    6
 
 ! black
 *.color0:       #181e34

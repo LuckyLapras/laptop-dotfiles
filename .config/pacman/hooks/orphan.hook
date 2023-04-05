@@ -8,4 +8,4 @@ Target = *
 [Action]
 Description = orphan detection
 When = PostTransaction
-Exec = /usr/bin/bash -c '[[ $(pacman -Qtd >/dev/null) ]] && echo -e "=> There are $(pacman -Qtd | wc -l) orphaned package(s).\n    -> pacman -Qtdq | sudo pacman -Rns -"'
+Exec = /usr/bin/bash -c 'pacman -Qtd >/dev/null && echo -e "==> There are $(pacman -Qtd | wc -l) orphaned package(s).\n  -> pacman -Qtdq | sudo pacman -Rns -" || return 0'
