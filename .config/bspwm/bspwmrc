@@ -32,4 +32,5 @@ pgrep -x succade > /dev/null || succade &
 fcitx5 &
 mconnect &
 megasync &
+systemctl --user --no-block start refresh_battery.service
 sleep 20; pkill -RTMIN+7 volume.sh; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar); bluetoothctl power on && bluetoothctl power off
