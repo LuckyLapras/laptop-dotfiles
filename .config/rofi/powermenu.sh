@@ -18,7 +18,7 @@ suspend=""
 logout=""
 
 askpass_cmd() {
-    SUDO_ASKPASS=~/.local/bin/rofi_askpass sudo -A $@
+    SUDO_ASKPASS=~/.local/bin/askpass-rofi sudo -A $@
 }
 
 # Variable passed to rofi
@@ -33,12 +33,12 @@ case $chosen in
 			askpass_cmd systemctl reboot
             ;;
     $lock)
-			askpass_cmd i3lock
+			i3lock -i $HOME/Pictures/Wallpapers/yliaed.png
             ;;
     $suspend)
-			askpass_cmd mpc -q pause && systemctl suspend
+			mpc -q pause && systemctl suspend
             ;;
     $logout)
-		    askpass_cmd bspc quit
+		    bspc quit
             ;;
 esac

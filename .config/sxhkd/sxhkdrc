@@ -8,12 +8,12 @@ super + Return
 
 # program launcher
 super + d
-    rofi -drun-use-desktop-cache -no-lazy-grab -show drun -modi run,drun,window \
+    rofi -drun-use-desktop-cache -drun-reload-desktop-cache -no-lazy-grab -show drun -modi run,drun,window \
     -theme /home/lily/.config/rofi/launcher.rasi
 
 # make sxhkd reload its configuration files:
 super + Escape
-    pkill -USR1 -x sxhkd
+    pkill -USR1 -x sxhkd && notify-send "sxhkd reloaded" -a sxhkd
 
 #edit bspwmrc
 super + shift + c
@@ -164,23 +164,29 @@ super + p
    /home/lily/.config/rofi/powermenu.sh
 
 super + w
-   rofi -show wifi -modi "wifi:iwdrofimenu,drun" -theme $HOME/.config/rofi/iwd.rasi
+   rofi -show wifi -modi "wifi:iwdrofimenu" -theme $HOME/.config/rofi/iwd.rasi
 
 super + b
-    rofi-bluetooth
+    rofi-bluetooth -theme $HOME/.config/rofi/bluetooth.rasi
 
 #screenshots
 
 Print
-   /home/lily/.scripts/screenshot.sh -q
+   /home/lily/.scripts/screenshot.sh
 
 ctrl + Print
-   /home/lily/.scripts/screenshot.sh -a
+   /home/lily/.scripts/screenshot.sh sel
 
 ctrl + shift + Print
-   /home/lily/.scripts/screenshot.sh -w
+   /home/lily/.scripts/screenshot.sh win
 
 #notifications
 
 super + {comma,period}
     dunstctl {close-all,history-pop}
+
+super + alt + comma
+    dunstctl set-paused toggle && pkill -RTMIN+12 notifs.sh
+
+super + alt + period
+    rofi -show notifs -modes "notifs:notifs.sh" -eh 3 -theme $HOME/.config/rofi/notifs.rasi -markup

@@ -24,7 +24,7 @@ compinit
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PATH=$PATH:/home/lily/.local/bin:/home/lily/.scripts:/home/lily/.scripts/realbar:$HOME/.local/usr/bin
+PATH=$PATH:/home/lily/.local/bin:/home/lily/.scripts:/home/lily/.scripts/rofi:$HOME/.local/usr/bin
 
 PANEL_FIFO=/tmp/panel-fifo
 PANEL_HEIGHT=24
@@ -65,13 +65,14 @@ alias jctl="journalctl -p 3 -xb"
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
-alias config='/usr/bin/git --git-dir=/home/lily/.git/ --work-tree=/home/lily'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 
 alias wine32='WINEPREFIX=~/.wine32 wine'
 
 notes() { vim ".notes/$@"; }
 
 backup() { cp -rfi $@ $@.bak }
+unbackup() { cp -rfi $@.bak $@ }
 
 dunzip() {
     if unzip -l "$1" | sed -n 5p | grep '/' &> /dev/null
@@ -93,6 +94,12 @@ preexec() {
     if [[ -n $DISPLAY ]];
     then
         org_ws=$(wmctrl -d | awk '{ if ($2 == "*") print $9}')
+        if [[ -n $cmd_name ]];
+        then
+            printf '\033];%s\a' "$cmd_name in ${PWD/$HOME/~} - $(pstree -sA $$ | awk -F "---" '{ print $2 }')"
+        else
+            printf '\033];%s\a' "${PWD/$HOME/~} - $(pstree -sA $$ | awk -F "---" '{ print $2 }')"
+        fi
     fi
 }
 
@@ -101,7 +108,6 @@ precmd () {
 
     if [[ -n $DISPLAY ]];
     then
-        printf '\033];%s\a' "${PWD/$HOME/~} - $(pstree -sA $$ | awk -F "---" '{ print $2 }')"
         if [[ -n $cmd_start_date ]];
         then
             cur_ws=$(wmctrl -d | awk '{ if ($2 == "*") print $9}')
@@ -119,6 +125,7 @@ precmd () {
                 fi
             fi
         fi
+        printf '\033];%s\a' "${PWD/$HOME/~} - $(pstree -sA $$ | awk -F "---" '{ print $2 }')"
     fi
 }
 
@@ -126,9 +133,9 @@ setopt CORRECT
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 
-echo -e 'DO THESE THINGS\n'
-todo
-echo -e '\n'
+#echo -e 'DO THESE THINGS\n'
+#todo
+#echo -e '\n'
 
 source /home/lily/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/src/powerlevel10k/powerlevel10k.zsh-theme
@@ -136,4 +143,4 @@ source ~/src/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-SUDO_ASKPASS=~/.local/bin/rofi_askpass
+SUDO_ASKPASS=~/.local/bin/askpass-rofi

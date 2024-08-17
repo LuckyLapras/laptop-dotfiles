@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 #
 # ~/.xinitrc
 #
@@ -17,6 +17,9 @@ fi
 
 xrdb -merge ~/.Xresources
 setxkbmap gb
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 
 . /etc/os-release
 
@@ -24,7 +27,4 @@ setxkbmap gb
 xset s off
 xset -dpms
 
-case $NAME in
-    "Arch Linux")   exec bspwm ;;
-    "Ubuntu")       exec i3 ;;
-esac
+exec bspwm >/tmp/bsp.log

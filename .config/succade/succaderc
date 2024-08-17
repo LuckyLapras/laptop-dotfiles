@@ -1,14 +1,14 @@
 [bar]
 name = "testbar"
-blocks = "desktop cpu ram updates mount bluetooth | title | brightness volume wifi datetime battery"
-width=1920
+blocks = "desktop cpu ram updates mount bluetooth | title | brightness volume wifi datetime battery notifs"
+width = 1920
 height = 24
 areas = 17
 foreground = "#cccccc"
 background = "#292929"
 line-color = "#f7a8b8"
 line-width = 2
-font="Cozette:size=5"
+font = "Cozette:size=5"
 label-font = "Siji-ng:size=10"
 #label-font = "icomoon-feather"
 
@@ -33,12 +33,12 @@ interval = 1
 [cpu]
 command = ~/.scripts/blocks/cpu-proc -m -u
 label = " "
-mouse-left = "st htop"
+mouse-left = "st htop &"
 
 [ram]
 command = ~/.scripts/blocks/mem-proc -m -u
 label = " "
-mouse-left = "st htop"
+mouse-left = "st htop &"
 
 [title]
 command = ~/.scripts/blocks/xtitle -s -t 101
@@ -65,7 +65,7 @@ raw = true
 [updates]
 command = ~/.scripts/blocks/updates.sh
 raw=true
-mouse-left = "st sudo pacman -Syu"
+mouse-left = "st sudo pacman -Syu && echo 'done'"
 
 [mount]
 command = ~/.scripts/blocks/mounts.sh
@@ -75,4 +75,11 @@ mouse-left = "umount_dmenu"
 [bluetooth]
 command = python ~/.scripts/blocks/bluetooth.py
 raw = true
-mouse-left = rofi-bluetooth
+mouse-left = "rofi-bluetooth -theme $HOME/.config/rofi/bluetooth.rasi"
+
+[notifs]
+command = ~/.scripts/blocks/notifs.sh
+raw = true
+mouse-left = dunstctl set-paused toggle && pkill -RTMIN+12 notifs.sh
+#mouse-left = "notify-send hi"
+#mouse-left = "rofi-bluetooth -theme $HOME/.config/rofi/bluetooth.rasi"

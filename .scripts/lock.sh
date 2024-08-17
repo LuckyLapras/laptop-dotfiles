@@ -11,8 +11,8 @@ xidlehook \
   --timer 60 \
     'grep 0 /sys/class/power_supply/ADP0/online > /dev/null && brightnessctl -s && xbacklight -fps 30 -set 1' \
     'grep 0 /sys/class/power_supply/ADP0/online > /dev/null && brightnessctl -r' \
-    `# Undim & lock after 30 more seconds` \
-  --timer 30 \
+    `# Undim & lock after two more minutes` \
+  --timer 120 \
     'grep 0 /sys/class/power_supply/ADP0/online > /dev/null && i3lock -i /home/lily/Pictures/Wallpapers/yliaed.png && brightnessctl -r' \
     '' \
   `# Finally, suspend five minutes after it locks` \

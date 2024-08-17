@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/zsh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep bspswallow || bspswallow &
@@ -13,6 +13,7 @@ bspc config borderless_monocle         true
 bspc config gapless_monocle            true
 bspc config merge_overlapping_monitors true
 bspc config ignore_ewmh_focus          true
+bspc config -m eDP-1 top_padding       24
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
@@ -33,4 +34,4 @@ fcitx5 &
 mconnect &
 megasync &
 systemctl --user --no-block start refresh_battery.service
-sleep 20; pkill -RTMIN+7 volume.sh; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar); bluetoothctl power on && bluetoothctl power off
+sleep 20; pkill -RTMIN+7 volume.sh; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar); bluetoothctl power on && bluetoothctl power off; pkill -RTMIN+12 notifs.sh

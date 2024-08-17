@@ -33,25 +33,23 @@ selection() (
     kill "$feh_pid"
 )
 
-while getopts ":qaw" option; do
-    case $option in
-        q) maim -u $DIR/$FILENAME
+case $1 in
+    sel) #maim -s -r boxzoom -u $DIR/$FILENAME
+       selection
+       if [ -f $DIR/$FILENAME ]; then
            xclip -sel clip < /dev/null
            xclip -selection clip -t image/png $DIR/$FILENAME
            notify
-           exit;;
-        a) #maim -s -r boxzoom -u $DIR/$FILENAME
-           selection
-           if [ -f $DIR/$FILENAME ]; then
-               xclip -sel clip < /dev/null
-               xclip -selection clip -t image/png $DIR/$FILENAME
-               notify
-           fi
-           exit;;
-        w) maim -u -i $(xdotool getactivewindow) $DIR/$FILENAME
-           xclip -sel clip < /dev/null
-           xclip -selection clip -t image/png $DIR/$FILENAME
-           notify
-           exit;;
-    esac
-done
+       fi
+       exit;;
+    win) maim -u -i $(xdotool getactivewindow) $DIR/$FILENAME
+       xclip -sel clip < /dev/null
+       xclip -selection clip -t image/png $DIR/$FILENAME
+       notify
+       exit;;
+    *) maim -u $DIR/$FILENAME
+       xclip -sel clip < /dev/null
+       xclip -selection clip -t image/png $DIR/$FILENAME
+       notify
+       exit;;
+esac

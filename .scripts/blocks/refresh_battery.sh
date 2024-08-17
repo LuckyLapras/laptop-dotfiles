@@ -1,16 +1,18 @@
 #!/bin/sh
 
-#call this script in a systemd service which is called in a udev rule
+#call this script in a udev rule
 
 pkill -RTMIN+10 battery.sh
 
-BATS=/sys/class/power_supply/BAT0/status
+ADPS=/sys/class/power_supply/ADP0/online
 
-# we sleep here bc my charger sucks and gets knocked out very easily which fucks up the saving process
-# (i'm sick of my brightness getting set to 100 randomly without me realising)
-
-case $(cat $BATS) in
-    Charging|Unknown|Full|"Not charging") sleep 5 && $HOME/.local/bin/save_backlight.sh save && $HOME/.local/bin/save_backlight.sh load
+case $(cat $ADPS) in
+    '1') /home/lily/.scripts/save_backlight.sh save && xbacklight -fps 30 -set 100 && pkill -RTMIN+6 brightness.sh && \
+        echo 'max_performance' >/sys/class/scsi_host/host0/link_power_management/policy && \
+        echo 'max_performance' >/sys/class/scsi_host/host1/link_power_management/policy
         ;;
-    *) sleep 5 && $HOME/.local/bin/save_backlight.sh load && $HOME/.local/bin/save_backlight.sh save
+    '0') /home/lily/.scripts/save_backlight.sh load && pkill -RTMIN+6 brightness.sh && \
+        echo 'med_power_with_dipm' >/sys/class/scsi_host/host0/link_power_management/policy && \
+        echo 'med_power_with_dipm' >/sys/class/scsi_host/host1/link_power_management/policy
+        ;;
 esac
