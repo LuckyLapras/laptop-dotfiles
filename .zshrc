@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 #source ~/src/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source /home/lily/src/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/lily/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -137,7 +137,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 #todo
 #echo -e '\n'
 
-source /home/lily/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/lily/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/src/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
