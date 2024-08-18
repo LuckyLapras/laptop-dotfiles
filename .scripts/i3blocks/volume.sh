@@ -1,7 +1,7 @@
 #!/bin/dash
 
 volume() {
-vol=$(/home/lily/.scripts/blocks/volume-pulse -w "MUTED")
+vol=$($HOME/.scripts/blocks/volume-pulse -w "")
 
 label=''
 
@@ -34,7 +34,7 @@ case $hphone in
 esac
 
 label="%%{F$col}%%{F-}%%{B$col}$sym"
-printf "$label $vol%%{B$col}%%{F#C3EDFE}%%{O5}%%{B-}%%{F-}"
+printf "$label $vol %%{B$col}%%{F#C3EDFE}%%{B-}%%{F-}"
 }
 
 trap 'volume' 41

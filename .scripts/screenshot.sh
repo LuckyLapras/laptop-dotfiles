@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export DIR=/home/lily/Pictures/Screenshots/$(date +\%Y-\%m)
+export DIR=$HOME/Pictures/Screenshots/$(date +\%Y-\%m)
 export FILENAME=Screenshot-$(date +\%Y\%m\%d-\%H\%M\%S).png
 mkdir -p $DIR
 export MESSAGE="File saved to $DIR/$FILENAME"

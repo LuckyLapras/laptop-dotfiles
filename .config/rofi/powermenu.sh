@@ -39,6 +39,6 @@ case $chosen in
 			mpc -q pause && systemctl suspend
             ;;
     $logout)
-		    bspc quit
+		    pkill X
             ;;
 esac

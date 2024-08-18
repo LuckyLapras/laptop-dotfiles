@@ -9,7 +9,7 @@ super + Return
 # program launcher
 super + d
     rofi -drun-use-desktop-cache -drun-reload-desktop-cache -no-lazy-grab -show drun -modi run,drun,window \
-    -theme /home/lily/.config/rofi/launcher.rasi
+    -theme $HOME/.config/rofi/launcher.rasi
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -161,7 +161,7 @@ XF86MonBrightnessUp
 #rofi
 
 super + p
-   /home/lily/.config/rofi/powermenu.sh
+   $HOME/.config/rofi/powermenu.sh
 
 super + w
    rofi -show wifi -modi "wifi:iwdrofimenu" -theme $HOME/.config/rofi/iwd.rasi
@@ -172,13 +172,13 @@ super + b
 #screenshots
 
 Print
-   /home/lily/.scripts/screenshot.sh
+   $HOME/.scripts/screenshot.sh
 
 ctrl + Print
-   /home/lily/.scripts/screenshot.sh sel
+   $HOME/.scripts/screenshot.sh sel
 
 ctrl + shift + Print
-   /home/lily/.scripts/screenshot.sh win
+   $HOME/.scripts/screenshot.sh win
 
 #notifications
 

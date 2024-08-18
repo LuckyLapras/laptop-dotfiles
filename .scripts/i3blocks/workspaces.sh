@@ -32,5 +32,5 @@ do
     col_prev=$col
 done <<< $all
 
-str="$str%%{F$col_prev}%%{F-}"
+str="$str%%{F$col_prev}%%{F-} "
 printf "$str"
