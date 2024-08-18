@@ -24,8 +24,6 @@ compinit
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PATH=$PATH:/home/lily/.local/bin:/home/lily/.scripts:/home/lily/.scripts/rofi:$HOME/.local/usr/bin
-
 PANEL_FIFO=/tmp/panel-fifo
 PANEL_HEIGHT=24
 PANEL_FONT="-*-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
