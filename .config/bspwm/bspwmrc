@@ -26,7 +26,7 @@ bspc rule -a Zathura state=tiled
 
 picom &
 dunst &
-feh --bg-scale /home/lily/Pictures/Wallpapers/rinabg.jpg
+feh --bg-scale $HOME/Pictures/Wallpapers/rinabg.jpg
 xsetroot -cursor_name left_ptr
 systemctl --user start autostart.target
 pgrep -x succade > /dev/null || succade &

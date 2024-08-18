@@ -1,7 +1,7 @@
 [bar]
 command = "lemonbar -b -o 2"
 name = "testbar"
-blocks = "desktop | | title volume brightness cpu sep1 ram mount wifi battery sep2 datetime sep3"
+blocks = "desktop title | | volume brightness cpu sep1 ram mount wifi battery datetime sep3"
 height = 15
 width=1920
 areas = 6
@@ -10,70 +10,69 @@ background = "#000000"
 font="Cozette-7"
 
 [default]
-label-foreground = "#ec3257"
-affix-foreground = "#555555"
+raw = true
 live = true
 
 [desktop]
-command = /home/lily/.scripts/i3blocks/workspaces.sh
+command = $HOME/.scripts/i3blocks/workspaces.sh
 trigger = i3-msg -t subscribe -m '[ "workspace" ]'
 raw = true
 
 [title]
-command = /home/lily/.scripts/blocks/xtitle -s -t 131
+command = $HOME/.scripts/blocks/xtitle -s -t 131
 foreground = "#FFFFFF"
 margin-right = 5
 
 [volume]
-command = /home/lily/.scripts/i3blocks/volume.sh
+command = $HOME/.scripts/i3blocks/volume.sh
 raw = true
 mouse-left = pavucontrol
 
 [brightness]
-command = /home/lily/.scripts/i3blocks/brightness.sh
+command = $HOME/.scripts/i3blocks/brightness.sh
 raw = true
 
 [cpu]
-command = /home/lily/.scripts/blocks/cpu-proc -m -u
+command = $HOME/.scripts/blocks/cpu-proc -m -u
 mouse-left = "st htop"
 background = "#AFE7FE"
 label = "✹ "
 label-background = "#AFE7FE"
 label-foreground = "#000000"
-raw = true
+raw = false
 
 [sep1]
-command = /home/lily/.scripts/i3blocks/sep.sh 1
+command = $HOME/.scripts/i3blocks/sep.sh 1
 raw = true
 interval = 0
 live = false
 
 [ram]
-command = /home/lily/.scripts/blocks/mem-proc -m -u
+command = $HOME/.scripts/blocks/mem-proc -m -u
 mouse-left = "st htop"
 background = "#9BE1FD"
 label = " "
 label-background = "#9BE1FD"
 label-foreground = "#000000"
-raw = true
+raw = false
 
 [mount]
-command = /home/lily/.scripts/i3blocks/mounts.sh
+command = $HOME/.scripts/i3blocks/mounts.sh
 raw = true
 mouse-left = "umount_dmenu"
 
 [wifi]
-command = /home/lily/.scripts/i3blocks/wifi.sh
+command = $HOME/.scripts/i3blocks/wifi.sh
 raw = true
 mouse-left = networkmanager_dmenu
 
 [battery]
-command = /home/lily/.scripts/i3blocks/battery.sh
+command = $HOME/.scripts/i3blocks/battery.sh
 raw = true
-mouse-left = /home/lily/.config/rofi/applets/android/powermenu.sh
+mouse-left = $HOME/.config/rofi/applets/android/powermenu.sh
 
 [sep2]
-command = /home/lily/.scripts/i3blocks/sep.sh 2
+command = $HOME/.scripts/i3blocks/sep.sh 2
 raw = true
 interval = 0
 live = false
@@ -84,7 +83,7 @@ interval = 1
 background = "#4ACAFC"
 
 [sep3]
-command = /home/lily/.scripts/i3blocks/sep.sh 3
+command = $HOME/.scripts/i3blocks/sep.sh 3
 raw = true
 interval = 0
 live = false

@@ -35,11 +35,11 @@ battery() {
             ;;
         Full)             dunstify -r $NID 'how tf'
             ;;
-        *)  { [ $BATS = "Charging" || [ $BATS = "Unknown" ]; } && dunstify -C $NID
+        *)  { [ $BATS = "Charging" ] || [ $BATS = "Unknown" ]; } && dunstify -C $NID
             ;;
     esac
 
-    printf "%%{B#72D6FD}%%{O5}%%{F#5ED0FD}%%{B-}%%{F-}%%{B#5ED0FD}$label$BATC%%\\n"
+    printf "%%{B#72D6FD}%%{O5}%%{F#5ED0FD}%%{B-}%%{F-}%%{B#5ED0FD}$label$BATC%% %%{F#4ACAFC}%%{B-}%%{F-}\\n"
 }
 
 trap 'battery' 44
