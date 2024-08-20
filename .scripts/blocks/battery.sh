@@ -45,7 +45,7 @@ battery() {
             underline=$char
             ;;
         Discharging)
-            [ $BATC -ge 21 ] && dunstify -C $NID
+            [ $BATC -ge 21 ] && dunstify -C $NID || notify-send -r $NID "i don't care if u transgender" 'charge yo damn laptop' -a 'battery.sh'
             underline=$norm
             ;;
     esac

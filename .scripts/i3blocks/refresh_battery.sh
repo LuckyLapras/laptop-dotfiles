@@ -1,27 +1,18 @@
 #!/bin/sh
 
-#call this script in a systemd service which is called in a udev rule
+#call this script in a udev rule
 
 pkill -RTMIN+10 battery.sh
 
-BATS=/sys/class/power_supply/BAT0/status
+ADPS=/sys/class/power_supply/ADP0/online
 
-if ls /tmp/bness.txt.*; then
-    file=$(ls /tmp/bness.*)
-else
-    file=$(mktemp /tmp/bness.txt.XXX)
-fi
-
-chmod 666 "$file"
-
-if [[ $(cat "$file") = "" ]]; then
-    echo 39 > "$file"
-fi
-
-case $(cat $BATS) in
-    Charging|Unknown|Full|"Not charging") xbacklight -get > "$file" && xbacklight -fps 30 -set 100
+case $(cat $ADPS) in
+    '1') $HOME/.scripts/save_backlight.sh save && xbacklight -fps 30 -set 100 && pkill -RTMIN+6 brightness.sh && \
+        echo 'max_performance' >/sys/class/scsi_host/host0/link_power_management/policy && \
+        echo 'max_performance' >/sys/class/scsi_host/host1/link_power_management/policy
         ;;
-    *) xbacklight -fps 30 -set $(cat "$file")
+    '0') $HOME/.scripts/save_backlight.sh load && pkill -RTMIN+6 brightness.sh && \
+        echo 'med_power_with_dipm' >/sys/class/scsi_host/host0/link_power_management/policy && \
+        echo 'med_power_with_dipm' >/sys/class/scsi_host/host1/link_power_management/policy
+        ;;
 esac
-
-pkill -RTMIN+6 brightness.sh

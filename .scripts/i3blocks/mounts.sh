@@ -1,7 +1,7 @@
 #!/bin/dash
 
 mounts() {
-    devs=`ls -al /dev/disk/by-path/*usb*part* 2>/dev/null | awk '{print $11}'`
+    devs=`ls -al /dev/disk/by-label 2>/dev/null | awk 'NR > 3 {print $11}'`
     num=`echo "$devs" | wc -l`
 
     if [ "$devs" = "" ]; then

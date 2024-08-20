@@ -28,4 +28,8 @@ export XMODIFIERS=@im=fcitx
 xset s off
 xset -dpms
 
-exec bspwm >/tmp/bsp.log
+case $USER in
+    lily) exec bspwm ;;
+    kinnie) exec i3 ;;
+    *) echo "not a valid user. edit .xinitrc"
+esac

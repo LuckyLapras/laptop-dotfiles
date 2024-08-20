@@ -17,25 +17,21 @@ battery() {
     [6-7]?) label=' '
         ;;
     [4-5]?) label=' '
-        { [ $BATC -gt 59 ] && { [ $BATS = "Charging" ] || [ $BATS = "Unknown" ] || [ $BATS = "Not charging" ]; }; } && dunstify -r $NID 'i care that u transgender' 'u can stop charging yo damn laptop' || dunstify -C $NID
         ;;
     [2-3]?) label=' '
         ;;
     *)      label=' '
         case $BATS in
-            Discharging) dunstify -u critical -r $NID 'i dont care if u transgender' 'charge yo damn laptop'
+            Chargin|Unknown|"Not Charging") dunstify -C $NID
         esac
         ;;
     esac
 
     case $BATS in
-        Charging|Unknown|"Not charging")
-            [ $BATC -ge 20 ] && dunstify -C $NID
-            [ $BATC -ge 61 ] && dunstify -r $NID 'how tf'
+        Charging|Unknown|"Not charging"|Full)
+            [ $BATC -eq 80 ] && notify-send -r $NID 'i care that u transgender' 'u can stop charging yo damn laptop' -a 'battery.sh'
             ;;
-        Full)             dunstify -r $NID 'how tf'
-            ;;
-        *)  { [ $BATS = "Charging" ] || [ $BATS = "Unknown" ]; } && dunstify -C $NID
+        *)  [ $BATC -ge 21 ] && dunstify -C $NID || notify-send -r $NID "i don't care if u transgender" 'charge yo damn laptop' -a 'battery.sh'
             ;;
     esac
 

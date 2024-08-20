@@ -13,6 +13,6 @@ brightness
 
 while :;
 do
-	sleep infinity &
-	wait
+    sleep infinity &
+    wait
 done
