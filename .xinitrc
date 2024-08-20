@@ -28,7 +28,7 @@ export XMODIFIERS=@im=fcitx
 xset s off
 xset -dpms
 
-if $(cat /proc/cmdline | grep threadirqs); then
+if grep -Fq threadirqs /proc/cmdline; then
     exec i3
 else
     exec bspwm
