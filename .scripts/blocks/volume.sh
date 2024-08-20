@@ -8,12 +8,15 @@ label=''
 case $vol in
     100|[6-9]?) uline="%%{U#ec3257}"
                 sym="墳"
+                vol=$vol%%%
         ;;
     [2-5]?)     uline="%%{U#f7a8b8}"
                 sym="奔"
+                vol=$vol%%%
         ;;
     [1-9]|1?)   uline="%%{U#f7a8b8}"
                 sym="奄"
+                vol=$vol%%%
         ;;
     *)          uline="%%{U#696969}"
                 sym="ﱝ"
@@ -32,7 +35,7 @@ case $hphone in
 esac
 
 label='%%{+u}'$uline'%%{F#ec3257}'$sym'%%{F-}'
-printf $label' '$vol'%%%%''%%{U-}%%{-u}'\\n
+printf $label' '$vol'%%{-u}'\\n
 }
 
 trap 'volume' 41
