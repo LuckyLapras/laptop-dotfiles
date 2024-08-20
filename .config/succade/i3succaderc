@@ -1,7 +1,7 @@
 [bar]
 command = "lemonbar -b -o 2"
 name = "testbar"
-blocks = "desktop title | | volume brightness cpu sep1 ram mount wifi battery datetime sep3"
+blocks = "desktop title | | volume brightness cpu sep1 ram mount wifi battery datetime"
 height = 15
 width=1920
 areas = 6
@@ -44,7 +44,7 @@ raw = false
 [sep1]
 command = $HOME/.scripts/i3blocks/sep.sh 1
 raw = true
-interval = 0
+interval = 600
 live = false
 
 [ram]
@@ -78,12 +78,12 @@ interval = 0
 live = false
 
 [datetime]
-command = "date +'%Y-%m-%d %H:%M:%S'"
+command = "date +'%Y-%m-%d %H:%M:%S '"
 interval = 1
 background = "#4ACAFC"
 
 [sep3]
 command = $HOME/.scripts/i3blocks/sep.sh 3
 raw = true
-interval = 0
+interval = 600
 live = false
