@@ -28,8 +28,8 @@ export XMODIFIERS=@im=fcitx
 xset s off
 xset -dpms
 
-case $USER in
-    lily) exec bspwm ;;
-    kinnie) exec i3 ;;
-    *) echo "not a valid user. edit .xinitrc"
-esac
+if $(cat /proc/cmdline | grep threadirqs); then
+    exec i3
+else
+    exec bspwm
+fi
