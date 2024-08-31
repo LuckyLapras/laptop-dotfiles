@@ -8,36 +8,36 @@
 st.borderpx:    6
 
 ! black
-*.color0:       #181e34
-*.color8:       #43487f
+*.color0:       #3d3d66
+*.color8:       #5c5c99
 
 ! red
-*.color1:       #7586f5
-*.color9:       #fe9dc6
+*.color1:       #ff77a7
+*.color9:       #ffc1d2
 
 ! green
-*.color2:       #ff80b5
-*.color10:      #344a7a
+*.color2:       #00c7af
+*.color10:      #00f6d9
 
 ! yellow
-*.color3:       #ffb3d2
-*.color11:      #3b3f6e
+*.color3:       #a89cff
+*.color11:      #d2ceff
 
 ! blue
-*.color4:       #87b3fc
-*.color12:      #51588c
+*.color4:       #67b0ff
+*.color12:      #b6d8ff
 
 ! magenta
-*.color5:       #fb6fa9
-*.color13:      #d0e8ff
+*.color5:       #f168ff
+*.color13:      #fabbff
 
 ! cyan
-*.color6:       #a3cfff
-*.color14:      #f764a1
+*.color6:       #00bfe0
+*.color14:      #80e6ff
 
 ! white
-*.color7:       #809dad
-*.color15:      #f8dfff
+*.color7:       #8f8fcc
+*.color15:      #ccccff
 
 *font:          Cozette
 Xcursor.theme:  Miku

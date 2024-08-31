@@ -55,8 +55,7 @@ endif
 :set number
 :set t_Co=16
 let g:airline_powerline_fonts = 1
-let g:airline_solarized_bg='dark'
-let g:airline_theme='base16_lily'
+let g:airline_theme='base16_vim'
 :set tabstop=4
 :set shiftwidth=4
 :set expandtab
@@ -68,3 +67,5 @@ set equalalways
 autocmd VimEnter * call timer_start(300, { tid -> execute('wincmd =')})
 autocmd VimResized * wincmd =
 
+highlight DiffDelete ctermfg=Black ctermbg=Red
+highlight Error ctermfg=Black ctermbg=Red
