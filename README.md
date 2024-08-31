@@ -12,17 +12,18 @@ this repo houses two different rices: regular and kinnie
 - wm: [bspwm](https://github.com/baskerville/bspwm)
 - compositor: [picom](https://github.com/yshui/picom)
 - terminal: [luke smith's build of st](https://github.com/LukeSmithxyz/st) (i would try patching and building it myself but it never works out for me)
-  - colour scheme: a slightly modified version of [Base2Tone-iterm2-SuburbDark](https://github.com/atelierbram/Base2Tone-iterm2)
+  - colour scheme: lily original :)
 - shell: [zsh](https://www.zsh.org)
   - zsh plugins: [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
   - prompt: [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+    - powerlevel10k rainbow theme slightly edited
 - bar: [succade](https://github.com/domsson/succade) (i really should learn how to use regular lemonbar at some point)
   - bar uses scripts from .scripts/blocks directory. i believe said scripts should be using dash instead of zsh. (with the exception of the workspaces script, which seems to break under dash)
 - notifs: [dunst](https://github.com/dunst-project/dunst)
 - editor: [vim](https://www.vim.org/)
   - vim plugins: [vim-airline](https://github.com/vim-airline/vim-airline)
-    - airline theme: a small modification of [base16\_vim](https://github.com/vim-airline/vim-airline/blob/master/autoload/airline/themes/dark.vim), edited such that replace mode doesn't suck
-- wallpaper: made by my good friend [emile toaster\_chan\_](https://twitter.com/catboy_milky) (commission emile)
+    - airline theme: a small modification of [base16\_vim](https://github.com/vim-airline/vim-airline/blob/master/autoload/airline/themes/dark.vim)
+- wallpaper: made by my good friend [emile catboy\_milky](https://twitter.com/catboy_milky) (commission emile)
 - rofi themes: text launcher and android powermenu adapted from [adi1090x](https://github.com/adi1090x/rofi)
 - font: [cozette](https://github.com/slavfox/Cozette)
 
