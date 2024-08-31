@@ -95,7 +95,7 @@ function! airline#themes#base16_vim#refresh()
 
   " Normal mode
   let s:N1 = [s:gui00, s:gui0B, s:base00, s:base08]
-  let s:N2 = [s:gui04, s:gui02, s:base00, s:base0C]
+  let s:N2 = [s:gui04, s:gui02, s:base00, s:base04]
   let s:N3 = [s:gui0B, s:gui01, s:base08, s:base00]
 
   if s:improved_contrast
@@ -165,6 +165,8 @@ function! airline#themes#base16_vim#refresh()
           \ = airline#themes#generate_color_map(s:V1, s:N2, s:N3)
   endif
 
+  let g:airline#themes#base16_vim#palette.visual_modified
+        \ = copy(g:airline#themes#base16_vim#palette.normal_modified)
   let g:airline#themes#base16_vim#palette.visual.airline_warning =
     \ g:airline#themes#base16_vim#palette.normal.airline_warning
 
