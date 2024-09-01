@@ -28,7 +28,7 @@ configuration {
 @import "colours.rasi"
 
 * {
-    background-color:             	@bg;
+    background-color:             	#000000;
 }
 
 window {
@@ -37,7 +37,7 @@ window {
     border-radius: 					0px;
     padding: 						30;
     width: 							20%;
-    height: 						calc(100% - 15px);
+    height: 						100%;
     x-offset:                       12px;
     y-offset:                       0px;
 }
@@ -100,39 +100,39 @@ element {
     padding: 						5px;
 }
 element normal.normal {
-    background-color: 				@bg;
+    background-color: 				#000000;
     text-color:       				@fg;
 }
 element normal.urgent {
-    background-color: 				@bg;
+    background-color: 				#000000;
     text-color:       				@red;
 }
 element normal.active {
     background-color: 				@green;
-    text-color:       				@bg;
+    text-color:       				#000000;
 }
 element selected.normal {
     background-color: 				@ac;
-    text-color:       				@bg;
+    text-color:       				#000000;
 }
 element selected.urgent {
-    background-color: 				@bg;
+    background-color: 				#000000;
     text-color:       				@red;
 }
 element selected.active {
     background-color: 				@ac;
-    text-color:       				@bg;
+    text-color:       				#000000;
 }
 element alternate.normal {
-    background-color: 				@bg;
+    background-color: 				#000000;
     text-color:       				@fg;
 }
 element alternate.urgent {
-    background-color: 				@bg;
+    background-color: 				#000000;
     text-color:       				@fg;
 }
 element alternate.active {
-    background-color: 				@bg;
+    background-color: 				#000000;
     text-color:       				@fg;
 }
 
