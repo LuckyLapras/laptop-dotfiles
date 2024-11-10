@@ -4,13 +4,14 @@ i should note before saying anything else that these files probably suck please 
 
 this repo houses two different rices: regular and kinnie
 
+
 ## regular rice
 
 ![screenshot](/Pictures/Screenshots/Demo/regular.png)
 
 - distro: [arch](https://archlinux.org)
 - wm: [bspwm](https://github.com/baskerville/bspwm)
-- compositor: [picom](https://github.com/yshui/picom)
+- compositor: [fastcompmgr](https://github.com/tycho-kirchner/fastcompmgr) (should also note that this requires git versions of xorg and its dependencies for anti-tearing using the modesetting driver. but u probably knew that anyway)
 - terminal: [luke smith's build of st](https://github.com/LukeSmithxyz/st) (i would try patching and building it myself but it never works out for me)
   - colour scheme: lily original :)
 - shell: [zsh](https://www.zsh.org)

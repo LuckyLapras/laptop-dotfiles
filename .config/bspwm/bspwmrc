@@ -5,9 +5,10 @@ pgrep bspswallow || bspswallow &
 
 bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0
 
-bspc config border_width         0
-bspc config window_gap          12
-
+bspc config border_width               2
+bspc config normal_border_color        "#696969"
+bspc config focused_border_color       "#f7a8b8"
+bspc config window_gap                 12
 bspc config split_ratio                0.50
 bspc config borderless_monocle         true
 bspc config gapless_monocle            true
@@ -24,7 +25,7 @@ bspc rule -a MEGAsync state=floating rectangle=402x564+1508+34
 bspc rule -a feh state=floating
 bspc rule -a Zathura state=tiled
 
-picom &
+fastcompmgr -o 0.6 -r 12 -c -C -i 0.7 &
 dunst &
 feh --bg-scale $HOME/Pictures/Wallpapers/rinabg.jpg
 xsetroot -cursor_name left_ptr

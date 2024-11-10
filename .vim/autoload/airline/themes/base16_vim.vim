@@ -96,7 +96,7 @@ function! airline#themes#base16_vim#refresh()
   " Normal mode
   let s:N1 = [s:gui00, s:gui0B, s:base00, s:base08]
   let s:N2 = [s:gui04, s:gui02, s:base00, s:base04]
-  let s:N3 = [s:gui0B, s:gui01, s:base08, s:base00]
+  let s:N3 = [s:gui0B, s:gui01, s:base08, s:base03]
 
   if s:improved_contrast
       let s:N2 = [s:gui05, s:gui02, s:base05, s:base02]
@@ -111,7 +111,7 @@ function! airline#themes#base16_vim#refresh()
   let g:airline#themes#base16_vim#palette.normal
         \ = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
   let g:airline#themes#base16_vim#palette.normal_modified = {
-        \ 'airline_c': [s:gui09, s:gui01, s:base08, s:base00, ''],
+        \ 'airline_c': [s:gui09, s:gui01, s:base08, s:base03, ''],
         \ }
   let g:airline#themes#base16_vim#palette.normal.airline_warning = [
         \ s:gui01, s:gui04, s:base00, s:base07
@@ -121,7 +121,7 @@ function! airline#themes#base16_vim#refresh()
 
   " Insert mode
   let s:I1 = [s:gui01, s:gui0D, s:base00, s:base0C]
-  let s:I3 = [s:gui0D, s:gui01, s:base0C, s:base00]
+  let s:I3 = [s:gui0D, s:gui01, s:base0C, s:base03]
   let g:airline#themes#base16_vim#palette.insert
         \ = airline#themes#generate_color_map(s:I1, s:N2, s:I3)
 
@@ -140,7 +140,7 @@ function! airline#themes#base16_vim#refresh()
 
   " Replace mode
   let s:R1 = [s:gui01, s:gui08, s:base00, s:base0D]
-  let s:R3 = [s:gui08, s:gui01, s:base0D, s:base00]
+  let s:R3 = [s:gui08, s:gui01, s:base0D, s:base03]
   let g:airline#themes#base16_vim#palette.replace
         \ = airline#themes#generate_color_map(s:R1, s:N2, s:R3)
 
@@ -155,7 +155,7 @@ function! airline#themes#base16_vim#refresh()
 
   " Visual mode
   let s:V1 = [s:gui01, s:gui0E, s:base00, s:base0E]
-  let s:V3 = [s:gui0E, s:gui01, s:base0E, s:base00]
+  let s:V3 = [s:gui0E, s:gui01, s:base0E, s:base03]
   let g:airline#themes#base16_vim#palette.visual
         \ = airline#themes#generate_color_map(s:V1, s:N2, s:V3)
 

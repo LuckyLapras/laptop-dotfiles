@@ -1,15 +1,15 @@
 *.selectToClipboard: true
 
 ! special
-*.foreground:   #7b83b4
-*.background:   #181e34
-*.cursorColor:  #7b83b4
+*.foreground:   #99aadc
+*.background:   #0e152a
+*.cursorColor:  #99aadc
 *.alpha:        0.92
 st.borderpx:    6
 
 ! black
-*.color0:       #3d3d66
-*.color8:       #5c5c99
+*.color0:       #0e152a
+*.color8:       #344273
 
 ! red
 *.color1:       #ff77a7
@@ -36,8 +36,8 @@ st.borderpx:    6
 *.color14:      #80e6ff
 
 ! white
-*.color7:       #8f8fcc
-*.color15:      #ccccff
+*.color7:       #5f73b4
+*.color15:      #99aadc
 
 *font:          Cozette
 Xcursor.theme:  Miku

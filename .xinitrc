@@ -31,5 +31,5 @@ xset -dpms
 if grep -Fq threadirqs /proc/cmdline; then
     exec i3
 else
-    exec bspwm
+    exec bspwm > /tmp/bspwm.log
 fi
