@@ -32,7 +32,7 @@ super + {_,shift + }q
     bspc node -{k,c}
 
 # alternate between the tiled and monocle layout
-super + m
+super + shift + m
     bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
@@ -163,32 +163,35 @@ XF86AudioMicMute
 #brightness
 
 XF86MonBrightnessDown
-   xbacklight -fps 30 -dec 10 && pkill -RTMIN+6 brightness.sh
+    xbacklight -fps 30 -dec 10 && pkill -RTMIN+6 brightness.sh
 
 XF86MonBrightnessUp
-   xbacklight -fps 30 -inc 10 && pkill -RTMIN+6 brightness.sh
+    xbacklight -fps 30 -inc 10 && pkill -RTMIN+6 brightness.sh
 
 #rofi
 
 super + p
-   $HOME/.config/rofi/powermenu.sh
+    $HOME/.config/rofi/powermenu.sh
 
 super + w
-   rofi -show wifi -modi "wifi:iwdrofimenu" -theme $HOME/.config/rofi/iwd.rasi
+    rofi -show wifi -modi "wifi:iwdrofimenu" -theme $HOME/.config/rofi/iwd.rasi
 
 super + b
     rofi-bluetooth -theme $HOME/.config/rofi/bluetooth.rasi
 
+super + m
+    UDISKIE_DMENU_LAUNCHER="rofi" udiskie-dmenu -matching regex -dmenu -i -no-custom -multi-select -theme $HOME/.config/rofi/launcher.rasi
+
 #screenshots
 
 Print
-   $HOME/.scripts/screenshot.sh
+    $HOME/.scripts/screenshot.sh
 
-ctrl + Print
-   $HOME/.scripts/screenshot.sh sel
+alt + Print
+    $HOME/.scripts/screenshot.sh sel
 
-ctrl + shift + Print
-   $HOME/.scripts/screenshot.sh win
+alt + shift + Print
+    $HOME/.scripts/screenshot.sh win
 
 #notifications
 
@@ -198,5 +201,5 @@ super + {comma,period}
 super + alt + comma
     dunstctl set-paused toggle && pkill -RTMIN+12 notifs.sh
 
-super + alt + period
+super + n
     rofi -show notifs -modes "notifs:notifs.sh" -eh 3 -theme $HOME/.config/rofi/notifs.rasi -markup

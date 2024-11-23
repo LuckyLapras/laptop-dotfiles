@@ -30,11 +30,13 @@ this repo houses two different rices: regular and kinnie
 
 ### known issues
 
-- the battery script causes a huge cpu spike when (dis)connecting the charger ~~(although that might just be bc my cpu's bad). im looking into some way to replace my current scripts with ones that use `inotifywait` to see if that has any effect.~~ i believe this has something to do with acpi. when i run `sudo udevadm control --log-priority=debug` and `journalctl -f` i see `ACPI group/action undefined: processor / LNXCPU:0x` which does not appear when im booted into ubuntu. i cannot figure out why this happens.
- - after a fresh reinstall this still persists but is nowhere near as bad. old installation had a spike of ~80%, new only ~50%. im thinking this may be an unavoidable issue
-- the bluetooth bar module will always report "Powered" on boot or when waking from suspend, which is very much not the case. i cannot figure out why this happens or how to fix it. im currently working around this by [turning bluetooth on and off again](https://askubuntu.com/a/1146734)
+- the battery script causes a ~~huge~~ cpu spike when (dis)connecting the charger ~~(although that might just be bc my cpu's bad). im looking into some way to replace my current scripts with ones that use `inotifywait` to see if that has any effect.~~ i believe this has something to do with acpi. when i run `sudo udevadm control --log-priority=debug` and `journalctl -f` i see `ACPI group/action undefined: processor / LNXCPU:0x` which does not appear when im booted into ubuntu. i cannot figure out why this happens.
+ - after a fresh reinstall this still persists but is nowhere near as bad. old installation had a spike of ~80%, new only ~20%. im thinking this may be an unavoidable issue
+- ~~the bluetooth bar module will always report "Powered" on boot or when waking from suspend, which is very much not the case. i cannot figure out why this happens or how to fix it. im currently working around this by [turning bluetooth on and off again](https://askubuntu.com/a/1146734)~~ u'll never fuckin believe what was causing this. i'd fuckin made the bluetooth script return true when powered was none like a fucking idiot. actual clown behaviour holy shit
 
 ## kinnie rice
+
+EVERYTHING LISTED BELOW IS CURRENTLY WRONG I'LL FIX THAT AT SOME POINT
 
 ![screenshot](/Pictures/Screenshots/Demo/kinnie.png)
 

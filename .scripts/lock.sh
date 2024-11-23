@@ -13,9 +13,9 @@ xidlehook \
     'grep 0 /sys/class/power_supply/ADP0/online > /dev/null && brightnessctl -r' \
     `# Undim & lock after two more minutes` \
   --timer 120 \
-    'grep 0 /sys/class/power_supply/ADP0/online > /dev/null && i3lock -i /home/lily/Pictures/Wallpapers/yliaed.png && brightnessctl -r' \
+    'i3lock -i $HOME/Pictures/Wallpapers/yliaed.png && brightnessctl -r' \
     '' \
-  `# Finally, suspend five minutes after it locks` \
+  `# Finally, suspend five minutes after it locks if on power` \
   --timer 300 \
     'grep 0 /sys/class/power_supply/ADP0/online > /dev/null && systemctl suspend' \
     ''

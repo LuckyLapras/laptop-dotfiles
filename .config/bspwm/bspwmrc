@@ -3,7 +3,16 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep bspswallow || bspswallow &
 
-bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0
+#if [ $(bspc query -M | wc -l) -eq 1 ]; then
+#    bspc monitor eDP-1 -d 1 2 3 4 5
+#    bspc monitor HDMI-1 -d 6 7 8 9 0
+#else
+    bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0
+#fi
+
+if [ -x $HOME/.scripts/monitors.sh ]; then
+    bash $HOME/.scripts/monitors.sh
+fi
 
 bspc config border_width               2
 bspc config normal_border_color        "#696969"
@@ -19,7 +28,8 @@ bspc config -m eDP-1 top_padding       24
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
+bspc rule -a i3lock manage=off
+bspc rule -a feh manage=off
 bspc rule -a Screenkey manage=off
 bspc rule -a MEGAsync state=floating rectangle=402x564+1508+34
 bspc rule -a feh state=floating
@@ -34,5 +44,6 @@ pgrep -x succade > /dev/null || succade &
 fcitx5 &
 mconnect &
 megasync &
+pgrep udiskie > /dev/null || udiskie -t &
 systemctl --user --no-block start refresh_battery.service
-sleep 20; pkill -RTMIN+7 volume.sh; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar); bluetoothctl power on && bluetoothctl power off; pkill -RTMIN+12 notifs.sh
+sleep 10; pkill -RTMIN+7 volume.sh; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar); pkill -RTMIN+12 notifs.sh

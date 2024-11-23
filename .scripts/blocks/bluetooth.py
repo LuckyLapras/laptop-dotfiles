@@ -30,23 +30,23 @@ def render(powered, connected):
     fd.flush()
 
 def init():
-    props_proxy = Gio.DBusProxy.new_for_bus_sync(
-            bus_type=bus_type,
-            flags=Gio.DBusProxyFlags.NONE,
-            info=None,
-            name=bus_name,
-            object_path=object_path,
-            interface_name='org.freedesktop.DBus.Properties',
-            cancellable=None)
-    powered = props_proxy.Get('(ss)', adapter_iface, 'Powered')
-    render(powered, False)
+    #props_proxy = Gio.DBusProxy.new_for_bus_sync(
+    #        bus_type=bus_type,
+    #        flags=Gio.DBusProxyFlags.NONE,
+    #        info=None,
+    #        name=bus_name,
+    #        object_path=object_path,
+    #        interface_name='org.freedesktop.DBus.Properties',
+    #        cancellable=None)
+    #powered = props_proxy.Get('(ss)', adapter_iface, 'Powered')
+    render(False, False)
 
 def props_handler(proxy: Gio.DBusProxy,
                   changed_props: GLib.Variant,
                   invalidated_props: list) -> None:
     props = changed_props.unpack()
     powered = props.get('Powered')
-    powered = True if powered is None else powered
+    powered = False if powered is None else powered
     connected = props.get('Connected')
     connected = False if connected is None else connected
     render(powered, connected)
